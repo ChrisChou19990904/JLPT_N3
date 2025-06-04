@@ -38,9 +38,29 @@
     a {
       color: #0066cc;
     }
+    #google_translate_element {
+      top: 10px;  /* 距離頁面頂端 10px */
+      left: 10px; /* 距離頁面左側 10px */
+      z-index: 9999; /* 保證它不會被其他元素遮蓋 */
+    }
   </style>
 </head>
 <body>
+<div id="google-translate-box">
+  <div id="google_translate_element"></div>
+  <!-- Google Translate 的自動翻譯功能 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',  // 頁面原語言
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <p>點擊上方的語言選單以切換語言</p>
+</div>
 <h1>🎌 自學考過日文N3的心得分享｜從零開始到合格的旅程</h1>
 <p>大家好，我是一位語言學習愛好者，今天想和大家分享我 <strong>靠自學考過 JLPT N3</strong>（日語能力試驗）的心得與過程。</p>
 <h2>📚 為什麼學日文？</h2>
@@ -63,7 +83,7 @@
   <li>累積自然用法與口語表達</li>
   <li>在潛移默化中增加單字量</li>
 </ul>
-<p>我個人是特攝迷，以下是推薦資源：</p>
+<p>我個人是特攝劇的愛好者，以下是推薦資源：</p>
 <ul>
   <li><a href="https://www.youtube.com/playlist?app=desktop&list=PLOt25Zf_1wANi9AFARkX0eKstHmJwz6YH" target="_blank" rel="noopener noreferrer">迪迦奧特曼全集（中日字幕版）</a></li>
   <li><a href="https://www.youtube.com/playlist?app=desktop&list=PLOt25Zf_1wANNBs-t00xNMmd_4qcdgOvc" target="_blank" rel="noopener noreferrer">捷德奧特曼全集（中日字幕版）</a></li>

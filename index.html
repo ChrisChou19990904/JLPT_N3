@@ -6,18 +6,39 @@
   <link rel="manifest" href="manifest.json">
   <title>自學考過日文N3心得分享｜從零開始到合格的旅程</title>
   <script>
-    self.addEventListener("install", (e) => {
-      e.waitUntil(
-              caches.open("jlpt-cache").then((cache) =>
-                      cache.addAll(["/", "/index.html", "/style.css", "/icon-192.png"])
-              )
-      );
+    document.getElementById('comment-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+      const imageFile = document.getElementById('image').files[0];
+      const videoFile = document.getElementById('video').files[0];
+
+      const commentSection = document.getElementById('comments');
+      const commentDiv = document.createElement('div');
+      commentDiv.innerHTML = `<p><strong>${name}</strong>: ${message}</p>`;
+
+      if (imageFile) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(imageFile);
+        img.style.maxWidth = '200px';
+        commentDiv.appendChild(img);
+      }
+
+      if (videoFile) {
+        const video = document.createElement('video');
+        video.src = URL.createObjectURL(videoFile);
+        video.controls = true;
+        video.style.maxWidth = '200px';
+        commentDiv.appendChild(video);
+      }
+
+      commentSection.appendChild(commentDiv);
+
+      // 清空表單
+      this.reset();
     });
-    self.addEventListener("fetch", (e) => {
-      e.respondWith(
-              caches.match(e.request).then((res) => res || fetch(e.request))
-      );
-    });
+
   </script>
   <style>
     body {
@@ -72,6 +93,25 @@
         margin: 10px 0;
         border: 1px solid #ccc;
         border-radius: 5px;
+    }
+  </style>
+  <style>
+    #comments > div {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .media-wrapper {
+      display: flex;
+      gap: 10px;
+      align-items: center; /* 垂直置中 */
+      margin-top: 8px;
+    }
+    .media-wrapper img,
+    .media-wrapper video {
+      max-width: 200px;
+      max-height: 150px;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -186,10 +226,67 @@
 <h2>💬 歡迎交流</h2>
 <p>如果你對日語學習、JLPT考試、語言方法，或是特攝劇也感興趣，歡迎留言！</p>
 <form id="comment-form">
-  <input type="text" id="name" placeholder="你的名字">
-  <textarea id="message" placeholder="留言內容"></textarea>
+  <input type="text" id="name" placeholder="你的名字" required />
+  <br />
+  <textarea id="message" placeholder="留言內容" required></textarea>
+  <br />
+  <label for="image">上傳圖片：</label>
+  <input type="file" id="image" accept="image/*" />
+  <br />
+    <label for="video">上傳影片：</label>
+  <input type="file" id="video" accept="video/*" />
+  <br />
   <button type="submit">送出</button>
 </form>
+
+<hr />
+<h3>留言內容：</h3>
+<div id="comments"></div>
+
+<script>
+  document.getElementById('comment-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const imageFile = document.getElementById('image').files[0];
+    const videoFile = document.getElementById('video').files[0];
+
+    if (!name || !message) {
+      alert('請填寫名字和留言內容');
+      return;
+    }
+
+    const commentDiv = document.createElement('div');
+    commentDiv.innerHTML = `<p><strong>${name}</strong>: ${message}</p>`;
+
+    const mediaWrapper = document.createElement('div');
+    mediaWrapper.classList.add('media-wrapper');
+
+    if (imageFile) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(imageFile);
+      img.alt = '上傳的圖片';
+      mediaWrapper.appendChild(img);
+    }
+
+    if (videoFile) {
+      const video = document.createElement('video');
+      video.src = URL.createObjectURL(videoFile);
+      video.controls = true;
+      mediaWrapper.appendChild(video);
+    }
+
+    // 只有當有圖片或影片時才加 mediaWrapper
+    if (mediaWrapper.children.length > 0) {
+      commentDiv.appendChild(mediaWrapper);
+    }
+
+    document.getElementById('comments').appendChild(commentDiv);
+
+    this.reset();
+  });
+</script>
 <ul id="messages"></ul>
 <footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
   作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white;">周彥廷</a>

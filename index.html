@@ -52,12 +52,20 @@
     h1, h2, h3 {
       color: #0055aa;
     }
-    img {
+    .textbook {
       width: 100%;
       max-width: 400px;
       display: block;
       margin: 10px auto;
       border: 5px solid blue;
+    }
+    .my_appearance{
+      width:540px;
+      height:720px;
+      max-width: 400px;
+      display: block;
+      margin: 10px auto;
+      border: 5px solid green;
     }
     iframe{
         width: 100%;
@@ -79,8 +87,15 @@
       padding: 10px;
       text-align: center;
     }
-    a {
-      color: #0066cc;
+    a{
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a:visited {
+      color: #2980b9;
     }
     #google_translate_element {
       top: 10px;  /* 距離頁面頂端 10px */
@@ -101,6 +116,38 @@
         margin: 10px 0;
         border: 1px solid #ccc;
         border-radius: 5px;
+    }
+    .transcript{
+        width: 100%;
+        max-width: 400px;
+        display: block;
+        margin: 10px auto;
+        border: 5px solid orange;
+    }
+    @media screen and (max-width: 767px) {
+      iframe{
+        max-width:100%;
+      }
+      img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1rem 0;
+      }
+      video{
+        border: 10px solid #ccc;
+        max-width: 100%;
+      }
+      a{
+        color: #2980b9;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:visited {
+        color: #2980b9;
+      }
     }
   </style>
   <style>
@@ -152,8 +199,8 @@
   <li><strong>特色：</strong>涵蓋各種動詞變化（意量形、て形、た形、命令形、使役、被動、使役被動、可能型等）和形容詞變化（現在式、過去式、否定型、副詞型態等）</li>
   <li><strong>缺點：</strong>雖然文法整理完整，但 <strong>單字量不足</strong>，無法應付考試需求</li>
 </ul>
-<img src="這就是你要的日語文法書封面.webp" alt="這就是你要的日語文法書 書本封面" />
-<img src="這就是你要的日語文法書背面.webp" alt="這就是你要的日語文法書 書本背面" />
+<img class="textbook" src="這就是你要的日語文法書封面.webp" alt="這就是你要的日語文法書 書本封面" />
+<img class="textbook" src="這就是你要的日語文法書背面.webp" alt="這就是你要的日語文法書 書本背面" />
 <h2>🎬 看日劇學日文</h2>
 <p>接著我透過看<strong>日劇學日文</strong>，特別建議使用<strong>中日雙語字幕</strong>，因為：</p>
 <ul>
@@ -185,16 +232,16 @@
 <h2>📘 考試前的實戰準備</h2>
 <h3>📗 單字書：新日檢N3關鍵單字</h3>
 <p>這是我準備單字的主力書籍，內容設計紮實：</p>
-<img src="新日檢單字書封面.webp" alt="新日檢N3關鍵單字 書本封面" />
-<img src="新日檢單字書背面.webp" alt="新日檢N3關鍵單字 書本背面" />
+<img class="textbook" src="新日檢單字書封面.webp" alt="新日檢N3關鍵單字 書本封面" />
+<img class="textbook" src="新日檢單字書背面.webp" alt="新日檢N3關鍵單字 書本背面" />
 <ul>
   <li>內容涵蓋N3常考單字、例句與題目練習（選擇、配對、順序）</li>
   <li>我是邊透過這本書準備考試，邊兼顧大學功課與學開車，真的滿吃力</li>
 </ul>
 <h3>📖 模擬試題訓練</h3>
 <p>接下來我使用這本模擬考題書進行實戰演練：</p>
-<img src="日本語能力試驗對應模擬考試問題集.webp" alt="日本語能力試驗對應模擬考試問題集" />
-<img src="日本語能力試驗對應模擬考試問題集背面.webp" alt="日本語能力試驗對應模擬考試問題集背面" />
+<img class="textbook" src="日本語能力試驗對應模擬考試問題集.webp" alt="日本語能力試驗對應模擬考試問題集" />
+<img class="textbook" src="日本語能力試驗對應模擬考試問題集背面.webp" alt="日本語能力試驗對應模擬考試問題集背面" />
 <p>看完單字書後我開始練N3題目，發現文法和閱讀部分還有不少新用法，於是上網查資料並整理筆記補強。</p>
 <h2>🎧 聽力練習</h2>
 <p>平常沒有持續聽NHK等日文媒體，聽力是在考前一週開始密集練習的。</p>
@@ -233,7 +280,7 @@
     <th>✅ 合格！（總分需 ≥ 95）</th>
   </tr>
 </table>
-<img src="日檢成績單.webp" alt="JLPT N3 成績單" />
+<img class="transcript" src="日檢成績單.webp" alt="JLPT N3 成績單" />
 <h2>🎉 結語</h2>
 <p>我是在吃午餐時查到成績的，看到合格的那一刻真的超級開心！</p>
 <p>自學的這條路雖然累，但能把熱情轉化為成果，真的很有成就感。希望這篇心得能幫助到正準備 JLPT 的你！</p>
@@ -299,7 +346,7 @@
 <ul id="messages"></ul>
   作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a>
   <br>創作日期：西元二零二五年六月五日<br>
-  <img width="150" height="450" src="my_appearance2.jpg" alt="自拍">
+  <img class="my_appearance" src="my_appearance2.jpg" alt="自拍">
   <br>
 </body>
 </html>

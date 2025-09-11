@@ -2,6 +2,7 @@ const CACHE_NAME = 'my-cache-v1';
 const urlsToCache = [
     '/',
     '/index.html',
+    '/offline.html',
     '/time_pronunciation.html',
     '/passport_vocabularies.html',
     '/manifest.json',
@@ -46,8 +47,19 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
     event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
-        })
+        caches.match(event.request)
+            .then(response => {
+                // 如果有快取就回傳
+                if (response) {
+                    return response;
+                }
+                // 沒有快取，就從網路抓
+                return fetch(event.request);
+            })
+            .catch(() => {
+                // 如果網路也失敗（離線了），回傳離線頁面
+                return caches.match('/offline.html');
+            })
     );
 });
+

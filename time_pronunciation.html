@@ -65,6 +65,34 @@
   </style>
 </head>
 <body>
+<button id="installBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #4285f4; color: white; border: none; border-radius: 5px; cursor: pointer;">
+  安裝這個 App
+</button>
+
+<script>
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const btn = document.getElementById('installBtn');
+    if (btn) btn.style.display = 'block';
+  });
+
+  document.getElementById('installBtn').addEventListener('click', () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('使用者同意安裝');
+        } else {
+          console.log('使用者拒絕安裝');
+        }
+        deferredPrompt = null;
+      });
+    }
+  });
+</script>
 <div id="google-translate-box">
   <div id="google_translate_element"></div>
   <!-- Google Translate 的自動翻譯功能 -->

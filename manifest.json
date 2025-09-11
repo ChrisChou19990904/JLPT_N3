@@ -1,7 +1,7 @@
 {
   "name": "JLPT N3 學習筆記",
   "short_name": "JLPT N3",
-  "start_url": ".",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4285f4",

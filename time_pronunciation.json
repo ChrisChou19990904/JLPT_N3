@@ -1,0 +1,8 @@
+{
+  "name": "日文時間唸法",
+  "short_name": "時間筆記",
+  "start_url": "time_pronunciation.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#777"
+}

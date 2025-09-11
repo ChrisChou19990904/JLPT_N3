@@ -363,5 +363,12 @@
 <footer style="font-size: 0.9em; text-align: center; margin-top: 2em; color: black;">
   所有頁面均來自同一 GitHub Pages 專案，包含本頁在內的延伸閱讀內容皆屬本網站整體架構之一。
 </footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('Service Worker 註冊成功'))
+            .catch(err => console.log('Service Worker 註冊失敗', err));
+  }
+</script>
 </body>
 </html>

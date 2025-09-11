@@ -1,0 +1,8 @@
+{
+  "name": "機場用語中日朗讀表",
+  "short_name": "中日朗讀",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f2f2f2"
+}

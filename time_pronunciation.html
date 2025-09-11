@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="日文時間與日期唸法詳細筆記，包含月份、日期、時間等語音播放與唸法對照表。">
   <meta name="author" content="周彥廷">
+  <link rel="manifest" href="time_pronunciation.json">
   <title>日文時間與日期唸法筆記</title>
   <style>
     body {
@@ -328,5 +329,12 @@
 作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a>
 <br>創作日期：西元二零二五年九月七日<br>
 <img width="300" height="400" class="my_appearance" src="my_appearance2.jpg" alt="自拍">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('Service Worker 註冊成功'))
+            .catch(err => console.log('Service Worker 註冊失敗', err));
+  }
+</script>
 </body>
 </html>

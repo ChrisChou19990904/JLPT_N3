@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>機場用語中日朗讀表</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        button { margin: 2px; padding: 5px 10px; cursor: pointer; }
+        #searchInput { width: 100%; padding: 8px; font-size: 16px; margin-bottom: 10px; }
+        a{
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #2980b9;
+        }
+        nav{
+            margin-bottom: 20px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <!-- Google Translate 的自動翻譯功能 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',  // 頁面原語言
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
+<header><nav><ul>
+    <li><strong>本頁內容：<br></strong>
+        <a>機場用語中日朗讀表｜出國旅遊必備單字</a></li>
+
+    <li><strong>其他文章連結：</strong><br>
+        <ol>
+            <li><a href="index.html" target="_blank">自學考過日文N3的心得分享｜從零開始到合格的旅程</a></li>
+            <li><a href="time_pronunciation.html" target="_blank">日文中的時間與日期唸法筆記</a></li>
+        </ol>
+    </li>
+</ul></nav></header>
+<h1>機場用語 (中文／日文發音)</h1>
+<p style="font-size: 18px; line-height: 1.6;">
+    我製作這個網頁是為了幫助自己和其他喜歡日本旅遊的人，能夠更方便地學習與機場有關的中日單字及發音。
+    不管是出國旅行還是學習日語，掌握這些常用詞彙都非常有幫助！
+</p>
+
+<!-- 搜尋框 -->
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="輸入中文或日文進行搜尋...">
+
+<table id="wordTable">
+    <tr>
+        <th>中文</th>
+        <th>日文</th>
+        <th>發音</th>
+    </tr>
+    <tr><td>護照</td><td>パスポート</td><td><button onclick="speak('護照','zh-TW')">中文朗讀</button><button onclick="speak('パスポート','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>簽證</td><td>ビザ</td><td><button onclick="speak('簽證','zh-TW')">中文朗讀</button><button onclick="speak('ビザ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>登機證</td><td>搭乗券（とうじょうけん）</td><td><button onclick="speak('登機證','zh-TW')">中文朗讀</button><button onclick="speak('とうじょうけん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>機票</td><td>航空券（こうくうけん）</td><td><button onclick="speak('機票','zh-TW')">中文朗讀</button><button onclick="speak('こうくうけん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>行李</td><td>荷物（にもつ）</td><td><button onclick="speak('行李','zh-TW')">中文朗讀</button><button onclick="speak('にもつ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>隨身行李</td><td>手荷物（てにもつ）</td><td><button onclick="speak('隨身行李','zh-TW')">中文朗讀</button><button onclick="speak('てにもつ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>托運行李</td><td>預け荷物（あずけにもつ）</td><td><button onclick="speak('托運行李','zh-TW')">中文朗讀</button><button onclick="speak('あずけにもつ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>超重行李</td><td>超過手荷物（ちょうかにもつ）</td><td><button onclick="speak('超重行李','zh-TW')">中文朗讀</button><button onclick="speak('ちょうかにもつ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>行李轉盤</td><td>手荷物受取所（てにもつうけとりじょ）</td><td><button onclick="speak('行李轉盤','zh-TW')">中文朗讀</button><button onclick="speak('てにもつうけとりじょ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>報到櫃台</td><td>チェックインカウンター</td><td><button onclick="speak('報到櫃台','zh-TW')">中文朗讀</button><button onclick="speak('チェックインカウンター','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>登機門</td><td>搭乗口（とうじょうぐち）</td><td><button onclick="speak('登機門','zh-TW')">中文朗讀</button><button onclick="speak('とうじょうぐち','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>候機室</td><td>待合室（まちあいしつ）</td><td><button onclick="speak('候機室','zh-TW')">中文朗讀</button><button onclick="speak('まちあいしつ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>起飛</td><td>離陸（りりく）</td><td><button onclick="speak('起飛','zh-TW')">中文朗讀</button><button onclick="speak('りりく','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>降落</td><td>着陸（ちゃくりく）</td><td><button onclick="speak('降落','zh-TW')">中文朗讀</button><button onclick="speak('ちゃくりく','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>班機</td><td>便（びん）</td><td><button onclick="speak('班機','zh-TW')">中文朗讀</button><button onclick="speak('びん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>航廈</td><td>ターミナル</td><td><button onclick="speak('航廈','zh-TW')">中文朗讀</button><button onclick="speak('ターミナル','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>登機口</td><td>ゲート</td><td><button onclick="speak('登機口','zh-TW')">中文朗讀</button><button onclick="speak('ゲート','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>候補名單</td><td>キャンセル待ち</td><td><button onclick="speak('候補名單','zh-TW')">中文朗讀</button><button onclick="speak('キャンセル待ち','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>轉機</td><td>乗り換え（のりかえ）</td><td><button onclick="speak('轉機','zh-TW')">中文朗讀</button><button onclick="speak('のりかえ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>直飛</td><td>直行便（ちょっこうびん）</td><td><button onclick="speak('直飛','zh-TW')">中文朗讀</button><button onclick="speak('ちょっこうびん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>安檢</td><td>セキュリティチェック</td><td><button onclick="speak('安檢','zh-TW')">中文朗讀</button><button onclick="speak('セキュリティチェック','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>海關</td><td>税関（ぜいかん）</td><td><button onclick="speak('海關','zh-TW')">中文朗讀</button><button onclick="speak('ぜいかん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>出境</td><td>出国（しゅっこく）</td><td><button onclick="speak('出境','zh-TW')">中文朗讀</button><button onclick="speak('しゅっこく','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>入境</td><td>入国（にゅうこく）</td><td><button onclick="speak('入境','zh-TW')">中文朗讀</button><button onclick="speak('にゅうこく','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>入境卡</td><td>入国カード（にゅうこくカード）</td><td><button onclick="speak('入境卡','zh-TW')">中文朗讀</button><button onclick="speak('にゅうこくカード','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>出口</td><td>出口（でぐち）</td><td><button onclick="speak('出口','zh-TW')">中文朗讀</button><button onclick="speak('でぐち','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>入口</td><td>入口（いりぐち）</td><td><button onclick="speak('入口','zh-TW')">中文朗讀</button><button onclick="speak('いりぐち','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>洗手間</td><td>トイレ</td><td><button onclick="speak('洗手間','zh-TW')">中文朗讀</button><button onclick="speak('トイレ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>免稅店</td><td>免税店（めんぜいてん）</td><td><button onclick="speak('免稅店','zh-TW')">中文朗讀</button><button onclick="speak('めんぜいてん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>候機大廳</td><td>ロビー</td><td><button onclick="speak('候機大廳','zh-TW')">中文朗讀</button><button onclick="speak('ロビー','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>班機延誤</td><td>遅延（ちえん）</td><td><button onclick="speak('班機延誤','zh-TW')">中文朗讀</button><button onclick="speak('ちえん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>班機取消</td><td>欠航（けっこう）</td><td><button onclick="speak('班機取消','zh-TW')">中文朗讀</button><button onclick="speak('けっこう','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>航空公司</td><td>航空会社（こうくうがいしゃ）</td><td><button onclick="speak('航空公司','zh-TW')">中文朗讀</button><button onclick="speak('こうくうがいしゃ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>地勤人員</td><td>地上職員（ちじょうしょくいん）</td><td><button onclick="speak('地勤人員','zh-TW')">中文朗讀</button><button onclick="speak('ちじょうしょくいん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>空服員</td><td>客室乗務員（きゃくしつじょうむいん）</td><td><button onclick="speak('空服員','zh-TW')">中文朗讀</button><button onclick="speak('きゃくしつじょうむいん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>駕駛艙</td><td>コックピット</td><td><button onclick="speak('駕駛艙','zh-TW')">中文朗讀</button><button onclick="speak('コックピット','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>跑道</td><td>滑走路（かっそうろ）</td><td><button onclick="speak('跑道','zh-TW')">中文朗讀</button><button onclick="speak('かっそうろ','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>機場接送</td><td>空港送迎（くうこうそうげい）</td><td><button onclick="speak('機場接送','zh-TW')">中文朗讀</button><button onclick="speak('くうこうそうげい','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>國際線</td><td>国際線（こくさいせん）</td><td><button onclick="speak('國際線','zh-TW')">中文朗讀</button><button onclick="speak('こくさいせん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>國內線</td><td>国内線（こくないせん）</td><td><button onclick="speak('國內線','zh-TW')">中文朗讀</button><button onclick="speak('こくないせん','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>航程</td><td>フライト</td><td><button onclick="speak('航程','zh-TW')">中文朗讀</button><button onclick="speak('フライト','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>機長</td><td>機長（きちょう）</td><td><button onclick="speak('機長','zh-TW')">中文朗讀</button><button onclick="speak('きちょう','ja-JP')">日文朗讀</button></td></tr>
+    <tr><td>旅客</td><td>乗客（じょうきゃく）</td><td><button onclick="speak('旅客','zh-TW')">中文朗讀</button><button onclick="speak('じょうきゃく','ja-JP')">日文朗讀</button></td></tr>
+</table>
+
+<script>
+    function speak(text, lang) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        speechSynthesis.speak(utterance);
+    }
+
+    function filterTable() {
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        const table = document.getElementById("wordTable");
+        const rows = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < rows.length; i++) {
+            let cells = rows[i].getElementsByTagName("td");
+            let match = false;
+
+            for (let j = 0; j < cells.length - 1; j++) {
+                if (cells[j].textContent.toLowerCase().includes(input)) {
+                    match = true;
+                    break;
+                }
+            }
+            rows[i].style.display = match ? "" : "none";
+        }
+    }
+</script>
+<script>
+    function speak(text, lang) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang; // 日本語
+        speechSynthesis.speak(utterance);
+    }
+</script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
+</script>
+
+<div class="fb-comments"
+     data-href="https://chrischou19990904.github.io/harp_app_introduction"
+     data-width="100%"
+     data-numposts="5">
+</div>
+
+
+<script>
+    document.getElementById('comment-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const imageFile = document.getElementById('image').files[0];
+        const videoFile = document.getElementById('video').files[0];
+
+        if (!name || !message) {
+            alert('請填寫名字和留言內容');
+            return;
+        }
+
+        const commentDiv = document.createElement('div');
+        commentDiv.innerHTML = `<p><strong>${name}</strong>: ${message}</p>`;
+
+        const mediaWrapper = document.createElement('div');
+        mediaWrapper.classList.add('media-wrapper');
+
+        if (imageFile) {
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(imageFile);
+            img.alt = '上傳的圖片';
+            mediaWrapper.appendChild(img);
+        }
+
+        if (videoFile) {
+            const video = document.createElement('video');
+            video.src = URL.createObjectURL(videoFile);
+            video.controls = true;
+            mediaWrapper.appendChild(video);
+        }
+
+        // 只有當有圖片或影片時才加 mediaWrapper
+        if (mediaWrapper.children.length > 0) {
+            commentDiv.appendChild(mediaWrapper);
+        }
+
+        document.getElementById('comments').appendChild(commentDiv);
+
+        this.reset();
+    });
+</script>
+<ul id="messages"></ul>
+作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a>
+<br>創作日期：西元二零二五年九月七日<br>
+<img width="300" height="400" class="my_appearance" src="my_appearance2.jpg" alt="自拍">
+</body>
+</html>

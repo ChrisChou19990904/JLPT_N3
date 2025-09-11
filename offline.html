@@ -17,6 +17,21 @@
   </style>
 </head>
 <body>
+<div id="google-translate-box">
+  <div id="google_translate_element"></div>
+  <!-- Google Translate 的自動翻譯功能 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',  // 頁面原語言
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <p>點擊上方的語言選單以切換語言</p>
+</div>
 <h1>🚫 無法連線</h1>
 <p>您目前處於離線狀態。<br>請檢查您的網路連線。</p>
 <a href="/">🔁 回首頁</a>

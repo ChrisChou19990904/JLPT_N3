@@ -59,9 +59,16 @@
     我製作這個網頁是為了幫助自己和其他喜歡去日本旅遊的人，能夠更方便地學習與機場有關的中日單字及發音。
     不管是出國旅行還是學習日語，掌握這些常用詞彙都非常有幫助！
 </p>
+<label for="searchInput">
+    搜尋（多語言支援）
+    <span title="如果頁面已經被 Google 翻譯成其他語言，請用該語言或日文搜尋喔！">❓</span>
+</label>
 <!-- 搜尋框 -->
-<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="輸入中文或日文進行搜尋...">
-
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="請輸入目前的畫面語言或日文進行搜尋...">
+<!-- 加在這裡 -->
+<p style="font-size: 14px; color: #666;">
+    ※ 原本的搜尋提示是「請輸入中文或日文進行搜尋」，但由於本頁使用了 Google 翻譯功能，若你已切換成其他語言，則需要以當前語言（如英文、法文等）或日文進行搜尋，否則可能無法正確篩選資料。這是因為 Google 翻譯會自動翻譯表格內的詞彙內容。
+</p>
 <table id="wordTable">
     <tr>
         <th>中文</th>

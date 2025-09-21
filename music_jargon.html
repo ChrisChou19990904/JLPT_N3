@@ -193,6 +193,25 @@
     }
   }
 </script>
+<p>
+  又比如，「《悲傷的沼澤》是透過D大調呈現的」，翻成日文是「悲しみの沼という曲はニ長調で演奏されている」
+</p>
+<button onclick="speakText('悲しみの沼という曲はニ長調で演奏されてる。', 'ja-JP')">點擊此處來聽日文發音</button>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vQK4mtT-vAk?si=SMmgjzOoi-uhqrHO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ydwfi_kHF34?si=C1Fm5iTaREk0a1W0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script>
+  function speakText(text, lang) {
+    if ('speechSynthesis' in window) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = lang;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utter);
+    } else {
+      alert('抱歉，您的瀏覽器不支援語音合成。');
+    }
+  }
+</script>
 <h2>🎷 樂器名稱（日文の読み方）</h2>
 <table>
   <thead>

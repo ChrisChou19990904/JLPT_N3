@@ -716,7 +716,7 @@
     // 播放發音的函數
     function playPronunciation(text) {
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang
+        utterance.lang = 'ja-JP';
         window.speechSynthesis.speak(utterance);
     }
 </script>

@@ -245,12 +245,25 @@
     <tr>
         <td>から</td>
         <td>表示原因</td>
-        <td>疲れたから、早く寝る（累了所以會早點睡）</td>
+        <td>
+            <ol>
+                <li>疲れたから、早く寝る（累了所以會早點睡）</li>
+                <li>雨が降っているから、出かけない（因為下雨所以不出門）</li>
+                <li>病気だから学校を休まなきゃ（生病了所以需要向學校請假）</li>
+                <li>背が低いから自悲を感じている（長得矮所以感到自卑）</li>
+            </ol>
+        </td>
     </tr>
     <tr>
         <td>ので</td>
-        <td>表示理由（較柔和）</td>
-        <td>雨なので、出かけない<br>（下雨了，所以不會出門）</td>
+        <td>表示理由（如果前面是名詞或な形容詞，則是なので而不是だので）</td>
+        <td>
+            <ol>
+                <li>病気なので学校に行けない<br>（生病了所以無法上學）</li>
+                <li>眠りすぎたので、遅くなってしまった<br>（睡過頭所以遲到）</li>
+                <li>背が高いので、自信を持っている<br>（長得高所以有自信）</li>
+            </ol>
+        </td>
     </tr>
     <tr>
         <td>けど / が</td>
@@ -341,7 +354,7 @@
 
 <h2>五、練習題</h2>
 <ol>
-    <li>請選出正確助詞：
+    <li>請選出正確的格助詞：
         <div>図書館（　）英語（　）勉強します。</div>
         <div class="answers">
             <button onclick="checkAnswer1('A')">A. に、を</button>
@@ -350,13 +363,11 @@
             <button onclick="checkAnswer1('D')">D. に、で</button>
         </div>
     </li>
-    <li>將下列中文翻譯成日文並填上正確助詞：
-        <br>我和朋友一起吃午餐。
+    <li>請選出正確的日文翻譯：
+        <br>我一看到奧特曼的時候，我以為我遇到了上帝。
         <div class="answers">
-            <button onclick="checkAnswer2('A')">A. 友達と昼ご飯を食べます。</button>
-            <button onclick="checkAnswer2('B')">B. 友達と昼ご飯を食べますか。</button>
-            <button onclick="checkAnswer2('C')">C. 友達に昼ご飯を食べます。</button>
-            <button onclick="checkAnswer2('D')">D. 友達で昼ご飯を食べます。</button>
+            <button onclick="checkAnswer2('A')">A. ウルトラマンを見ると、神に出会えたと思った。</button>
+            <button onclick="checkAnswer2('B')">B. ウルトラマンを見たと、神に出会えたと思った。</button>
         </div>
     </li>
     <li>請比較「は」與「が」在以下句子中的差異：
@@ -367,6 +378,37 @@
             <button onclick="checkAnswer3('C')">C. 「は」表示原因，「が」表示結果。</button>
             <button onclick="checkAnswer3('D')">D. 「は」與「が」在語法上無差異。</button>
         </div>
+    </li>
+    <li>請選出正確的日文翻譯：
+        <br>因為快樂，所以身體很好。
+        <div class="answers">
+            <button onclick="checkAnswer4('A')">A.幸せなので、体が良い。</button>
+            <button onclick="checkAnswer4('B')">B. 幸せだので、体が良い。</button>
+        </div>
+    </li>
+    <li>請選出正確的接續助詞：
+        <div>疲れた（　）遅く眠った。</div>
+        <div class="answers">
+            <button onclick="checkAnswer5('A')">A. から</button>
+            <button onclick="checkAnswer5('B')">B. けど</button>
+            <button onclick="checkAnswer5('C')">C. ので</button>
+            <button onclick="checkAnswer5('D')">D. と</button>
+        </div>
+    </li>
+    <li>請選出正確的接續助詞：
+        <div>動物園に着く（　）動物の写真を撮り始めた。</div>
+        <div class="answers">
+            <button onclick="checkAnswer6('A')">A. から</button>
+            <button onclick="checkAnswer6('B')">B. けど</button>
+            <button onclick="checkAnswer6('C')">C. ので</button>
+            <button onclick="checkAnswer6('D')">D. と</button>
+        </div>
+    </li>
+    <li>請選出正確的日文翻譯：
+        <div>你知道昨天舉辦運動會嗎？</div>
+        <div class="answers">
+            <button onclick="checkAnswer7('A')">A. 昨日運動会が行われると知っていますか？</button>
+            <button onclick="checkAnswer7('B')">B. 昨日運動会が行われたと知っていますか？</button>
     </li>
 </ol>
 
@@ -399,6 +441,38 @@
             alert("答案正確！");
         } else {
             alert("答案錯誤！正確答案是 A.");
+        }
+    }
+    function checkAnswer4(answer) {
+        if (answer === 'A') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 A.");
+        }
+    }
+    function checkAnswer5(answer) {
+        if (answer === 'B') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 B.");
+        }
+    }
+    function checkAnswer6(answer) {
+        if (answer === 'D') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 D.");
+        }
+    }
+    function checkAnswer7(answer) {
+        if (answer === 'B') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 B.");
         }
     }
 

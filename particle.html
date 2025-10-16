@@ -80,6 +80,13 @@
         #social-share a#twitter-share {
             color: #1DA1F2;
         }
+        .answers {
+            margin: 10px 0;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
         @media screen and (max-width: 767px) {
             img{
                 max-width: 100%;
@@ -336,15 +343,75 @@
 <ol>
     <li>請選出正確助詞：
         <div>図書館（　）英語（　）勉強します。</div>
-        <div>A. に、を　B. で、を　C. を、で　D. に、で</div>
+        <div class="answers">
+            <button onclick="checkAnswer1('A')">A. に、を</button>
+            <button onclick="checkAnswer1('B')">B. で、を</button>
+            <button onclick="checkAnswer1('C')">C. を、で</button>
+            <button onclick="checkAnswer1('D')">D. に、で</button>
+        </div>
     </li>
     <li>將下列中文翻譯成日文並填上正確助詞（辭書型與ます型都可）：
         <br>我和朋友一起吃午餐。
+        <div class="answers">
+            <button onclick="checkAnswer2('A')">A. 友達と昼ご飯を食べます。</button>
+            <button onclick="checkAnswer2('B')">B. 友達と昼ご飯を食べますか。</button>
+            <button onclick="checkAnswer2('C')">C. 友達に昼ご飯を食べます。</button>
+            <button onclick="checkAnswer2('D')">D. 友達で昼ご飯を食べます。</button>
+        </div>
     </li>
     <li>請比較「は」與「が」在以下句子中的差異：
         <br>① 私は先生です。<br>② 私が先生です。
+        <div class="answers">
+            <button onclick="checkAnswer3('A')">A. 「は」表示主題，「が」表示主語。</button>
+            <button onclick="checkAnswer3('B')">B. 「は」表示對比，「が」表示強調。</button>
+            <button onclick="checkAnswer3('C')">C. 「は」表示原因，「が」表示結果。</button>
+            <button onclick="checkAnswer3('D')">D. 「は」與「が」在語法上無差異。</button>
+        </div>
     </li>
 </ol>
+
+<div id="result" class="result"></div>
+
+<script>
+    let score = 0;
+
+    function checkAnswer1(answer) {
+        if (answer === 'B') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 B.");
+        }
+    }
+
+    function checkAnswer2(answer) {
+        if (answer === 'A') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 A.");
+        }
+    }
+
+    function checkAnswer3(answer) {
+        if (answer === 'A') {
+            score++;
+            alert("答案正確！");
+        } else {
+            alert("答案錯誤！正確答案是 A.");
+        }
+    }
+
+    // 顯示最終結果
+    function showResult() {
+        let totalQuestions = 3;
+        let percentage = (score / totalQuestions) * 100;
+        document.getElementById('result').innerHTML = `你答對了 ${score} 題，共 ${totalQuestions} 題，正確率為 ${percentage}%`;
+    }
+
+    // 當使用者選擇答案後，自動計算並顯示結果
+    window.addEventListener('unload', showResult);
+</script>
 
 <hr>
 <p>這份整理可以作為日文初級至中級學習者的助詞參考表。未來可加入更多例句與練習加強理解。</p>

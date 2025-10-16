@@ -418,62 +418,97 @@
 <script>
     let score = 0;
 
-    function checkAnswer1(answer) {
+    function checkAnswer1(answer, button) {
+        // 移除其他按鈕的 active 類
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // 為當前按鈕加上 active 類
+        button.classList.add('active');
+
         if (answer === 'B') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result1').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 B.");
+            document.getElementById('result1').innerHTML = "答案錯誤！正確答案是 B.";
         }
     }
 
-    function checkAnswer2(answer) {
+    function checkAnswer2(answer, button) {
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
         if (answer === 'A') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result2').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 A.");
+            document.getElementById('result2').innerHTML = "答案錯誤！正確答案是 A.";
         }
     }
 
-    function checkAnswer3(answer) {
+    function checkAnswer3(answer, button) {
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
         if (answer === 'A') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result3').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 A.");
+            document.getElementById('result3').innerHTML = "答案錯誤！正確答案是 A.";
         }
     }
-    function checkAnswer4(answer) {
+
+    function checkAnswer4(answer, button) {
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
         if (answer === 'A') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result4').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 A.");
+            document.getElementById('result4').innerHTML = "答案錯誤！正確答案是 A.";
         }
     }
-    function checkAnswer5(answer) {
+
+    function checkAnswer5(answer, button) {
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
         if (answer === 'B') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result5').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 B.");
+            document.getElementById('result5').innerHTML = "答案錯誤！正確答案是 B.";
         }
     }
-    function checkAnswer6(answer) {
+
+    function checkAnswer6(answer, button) {
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
         if (answer === 'D') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result6').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 D.");
+            document.getElementById('result6').innerHTML = "答案錯誤！正確答案是 D.";
         }
     }
-    function checkAnswer7(answer) {
+
+    function checkAnswer7(answer, button) {
+        const buttons = document.querySelectorAll('.answers button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
         if (answer === 'B') {
             score++;
-            alert("答案正確！");
+            document.getElementById('result7').innerHTML = "答案正確！";
         } else {
-            alert("答案錯誤！正確答案是 B.");
+            document.getElementById('result7').innerHTML = "答案錯誤！正確答案是 B.";
         }
     }
 

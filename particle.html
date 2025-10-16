@@ -412,7 +412,7 @@
         </div>
     </li>
 </ol>
-
+<button onclick="showResult()">提交結果</button>
 <div id="result" class="result"></div>
 
 <script>
@@ -481,8 +481,9 @@
     function showResult() {
         let totalQuestions = 7;
         let percentage = (score / totalQuestions) * 100;
-        document.getElementById('result').innerHTML = `你答對了 ${score} 題，共 ${totalQuestions} 題，正確率為 ${percentage}%`;
+        document.getElementById('result').innerHTML = `你答對了 ${score} 題，共 ${totalQuestions}題，正確率為 ${percentage.toFixed(2)}%。`;
     }
+
 
     // 當使用者選擇答案後，自動計算並顯示結果
     window.addEventListener('unload', showResult);

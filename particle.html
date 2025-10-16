@@ -361,172 +361,143 @@
     <li>請選出正確的格助詞：
         <div>図書館（　）英語（　）勉強します。</div>
         <div class="answers">
-            <button onclick="checkAnswer1('A', this)">A. に、を</button>
-            <button onclick="checkAnswer1('B', this)">B. で、を</button>
-            <button onclick="checkAnswer1('C', this)">C. を、で</button>
-            <button onclick="checkAnswer1('D', this)">D. に、で</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer1('A')">A. に、を</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer1('B')">B. で、を</button>
+            <button data-answer="C" onclick="selectOption(this); checkAnswer1('C')">C. を、で</button>
+            <button data-answer="D" onclick="selectOption(this); checkAnswer1('D')">D. に、で</button>
         </div>
     </li>
     <li>請選出正確的日文翻譯：
         <br>我一看到奧特曼的時候，我以為我遇到了上帝。
         <div class="answers">
-            <button onclick="checkAnswer2('A', this)">A. ウルトラマンを見ると、神に出会えたと思った。</button>
-            <button onclick="checkAnswer2('B', this)">B. ウルトラマンを見たと、神に出会えたと思った。</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer2('A')">A. ウルトラマンを見ると、神に出会えたと思った。</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer2('B')">B. ウルトラマンを見たと、神に出会えたと思った。</button>
         </div>
     </li>
     <li>請比較「は」與「が」在以下句子中的差異：
         <br>① 私は先生です。<br>② 私が先生です。
         <div class="answers">
-            <button onclick="checkAnswer3('A', this)">A. 「は」表示主題，「が」表示主語。</button>
-            <button onclick="checkAnswer3('B', this)">B. 「は」表示對比，「が」表示強調。</button>
-            <button onclick="checkAnswer3('C', this)">C. 「は」表示原因，「が」表示結果。</button>
-            <button onclick="checkAnswer3('D', this)">D. 「は」與「が」在語法上無差異。</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer3('A')">A. 「は」表示主題，「が」表示主語。</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer3('B')">B. 「は」表示對比，「が」表示強調。</button>
+            <button data-answer="C" onclick="selectOption(this); checkAnswer3('C')">C. 「は」表示原因，「が」表示結果。</button>
+            <button data-answer="D" onclick="selectOption(this); checkAnswer3('D')">D. 「は」與「が」在語法上無差異。</button>
         </div>
     </li>
     <li>請選出正確的日文翻譯：
         <br>因為快樂，所以身體很好。
         <div class="answers">
-            <button onclick="checkAnswer4('A', this)">A.幸せなので、体が良い。</button>
-            <button onclick="checkAnswer4('B', this)">B. 幸せだので、体が良い。</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer4('A')">A. 幸せなので、体が良い。</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer4('B')">B. 幸せだので、体が良い。</button>
         </div>
     </li>
     <li>請選出正確的接續助詞：
         <div>疲れた（　）遅く眠った。</div>
         <div class="answers">
-            <button onclick="checkAnswer5('A', this)">A. から</button>
-            <button onclick="checkAnswer5('B', this)">B. けど</button>
-            <button onclick="checkAnswer5('C', this)">C. ので</button>
-            <button onclick="checkAnswer5('D', this)">D. と</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer5('A')">A. から</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer5('B')">B. けど</button>
+            <button data-answer="C" onclick="selectOption(this); checkAnswer5('C')">C. ので</button>
+            <button data-answer="D" onclick="selectOption(this); checkAnswer5('D')">D. と</button>
         </div>
     </li>
     <li>請選出正確的接續助詞：
         <div>動物園に着く（　）動物の写真を撮り始めた。</div>
         <div class="answers">
-            <button onclick="checkAnswer6('A', this)">A. から</button>
-            <button onclick="checkAnswer6('B', this)">B. けど</button>
-            <button onclick="checkAnswer6('C', this)">C. ので</button>
-            <button onclick="checkAnswer6('D', this)">D. と</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer6('A')">A. から</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer6('B')">B. けど</button>
+            <button data-answer="C" onclick="selectOption(this); checkAnswer6('C')">C. ので</button>
+            <button data-answer="D" onclick="selectOption(this); checkAnswer6('D')">D. と</button>
         </div>
     </li>
     <li>請選出正確的日文翻譯：
         <div>你知道昨天舉辦運動會嗎？</div>
         <div class="answers">
-            <button onclick="checkAnswer7('A', this)">A. 昨日運動会が行われると知っていますか？</button>
-            <button onclick="checkAnswer7('B', this)">B. 昨日運動会が行われたと知っていますか？</button>
+            <button data-answer="A" onclick="selectOption(this); checkAnswer7('A')">A. 昨日運動会が行われると知っていますか？</button>
+            <button data-answer="B" onclick="selectOption(this); checkAnswer7('B')">B. 昨日運動会が行われたと知っていますか？</button>
         </div>
     </li>
 </ol>
-<button onclick="showResult(this)">提交結果</button>
+
 <div id="result" class="result"></div>
 
 <script>
     let score = 0;
 
-    function checkAnswer1(answer, button) {
-        // 移除其他按鈕的 active 類
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
+    function selectOption(button) {
+        // 找出該題的答案區塊（父容器）
+        const answersDiv = button.parentNode;
 
-        // 為當前按鈕加上 active 類
+        // 移除該題其他按鈕的 active class
+        Array.from(answersDiv.children).forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // 對被點擊按鈕加上 active
         button.classList.add('active');
+    }
 
+    function checkAnswer1(answer) {
         if (answer === 'B') {
             score++;
-            document.getElementById('result1').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result1').innerHTML = "答案錯誤！正確答案是 B.";
+            alert("答案錯誤！");
         }
     }
 
-    function checkAnswer2(answer, button) {
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
+    function checkAnswer2(answer) {
         if (answer === 'A') {
             score++;
-            document.getElementById('result2').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result2').innerHTML = "答案錯誤！正確答案是 A.";
+            alert("答案錯誤！");
         }
     }
 
-    function checkAnswer3(answer, button) {
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
+    function checkAnswer3(answer) {
         if (answer === 'A') {
             score++;
-            document.getElementById('result3').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result3').innerHTML = "答案錯誤！正確答案是 A.";
+            alert("答案錯誤！");
         }
     }
 
-    function checkAnswer4(answer, button) {
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
+    function checkAnswer4(answer) {
         if (answer === 'A') {
             score++;
-            document.getElementById('result4').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result4').innerHTML = "答案錯誤！正確答案是 A.";
+            alert("答案錯誤！");
         }
     }
 
-    function checkAnswer5(answer, button) {
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        if (answer === 'B') {
+    function checkAnswer5(answer) {
+        if (answer === 'A') {
             score++;
-            document.getElementById('result5').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result5').innerHTML = "答案錯誤！正確答案是 B.";
+            alert("答案錯誤！");
         }
     }
 
-    function checkAnswer6(answer, button) {
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
+    function checkAnswer6(answer) {
         if (answer === 'D') {
             score++;
-            document.getElementById('result6').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result6').innerHTML = "答案錯誤！正確答案是 D.";
+            alert("答案錯誤！");
         }
     }
 
-    function checkAnswer7(answer, button) {
-        const buttons = document.querySelectorAll('.answers button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
+    function checkAnswer7(answer) {
         if (answer === 'B') {
             score++;
-            document.getElementById('result7').innerHTML = "答案正確！";
         } else {
-            document.getElementById('result7').innerHTML = "答案錯誤！正確答案是 B.";
+            alert("答案錯誤！");
         }
     }
 
     // 顯示最終結果
     function showResult() {
-        button.classList.add('active');
         let totalQuestions = 7;
         let percentage = (score / totalQuestions) * 100;
         document.getElementById('result').innerHTML = `你答對了 ${score} 題，共 ${totalQuestions}題，正確率為 ${percentage.toFixed(2)}%。`;
+        window.addEventListener('unload', showResult);
     }
-
-
-    // 當使用者選擇答案後，自動計算並顯示結果
-    window.addEventListener('unload', showResult);
 </script>
 
 <hr>

@@ -148,6 +148,12 @@
     #social-share a#twitter-share {
       color: #1DA1F2;
     }
+    .hamburger {
+      display: none;  /* 在桌面端隱藏 */
+      cursor: pointer;
+      font-size: 30px;
+      color: black;
+    }
     @media screen and (max-width: 767px) {
       iframe{
         max-width:100%;
@@ -183,6 +189,24 @@
       nav{
         margin-bottom: 20px;
         background-color: pink;
+      }
+      nav li{
+        text-align: center;
+      }
+      #menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      /* 顯示漢堡選單按鈕 */
+      .hamburger {
+        display: block;  /* 在手機端顯示 */
+      }
+
+      /* 顯示菜單項目（當漢堡選單被點擊時） */
+      #menu.active {
+        display: flex;
       }
     }
   </style>
@@ -222,7 +246,9 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <p>點擊上方的語言選單以切換語言</p>
 </div>
-<header><nav><ul>
+<header><nav>
+  <div class="hamburger" id="hamburger">&#9776;</div>
+  <ul>
   <li><strong>本頁內容：<br></strong>
     <a>自學考過日文N3的心得分享｜從零開始到合格的旅程</a></li>
 
@@ -243,6 +269,12 @@
     </ol>
   </li>
 </ul></nav></header>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  });
+</script>
 <h1>🎌 自學考過日文N3的心得分享｜從零開始到合格的旅程</h1>
 <p>大家好，我是一位語言學習愛好者，今天想和大家分享我 <strong>靠自學考過 JLPT N3</strong>（日語能力試驗）的心得與過程。</p>
 <h2>📚 為什麼學日文？</h2>

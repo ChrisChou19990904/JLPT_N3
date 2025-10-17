@@ -270,9 +270,16 @@
         </td>
     </tr>
     <tr>
-        <td>けど / が</td>
-        <td>表示對比、轉折</td>
-        <td>安いけど、美味しい<br>（便宜但好吃）</td>
+        <td>けど / が / のに</td>
+        <td>表示對比、轉折（如果のに前面是名詞或な形容詞，則是なのに而不是だのに）</td>
+        <td>
+            <ol>
+                <li>安いけど、美味しい<br>（便宜但好吃）</li>
+                <li>彼は頭がいいが、運動が苦手だ<br>（他很聰明，但運動不擅長）</li>
+                <li>雨が降っているのに、出かける<br>（明明在下雨，卻還是出門）</li>
+                <li>この町は昼間に賑やかなのに、夜になると静かだ<br>（這個城市白天很熱鬧，但到了晚上變得很安靜）</li>
+            </ol>
+        </td>
     </tr>
     <tr>
         <td>と</td>
@@ -365,60 +372,101 @@
     <li>請選出正確的格助詞：
         <div>図書館（　）英語（　）勉強します。</div>
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer1('A')">A. に、を</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer1('B')">B. で、を</button>
-            <button data-answer="C" onclick="selectOption(this); checkAnswer1('C')">C. を、で</button>
-            <button data-answer="D" onclick="selectOption(this); checkAnswer1('D')">D. に、で</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 0); checkAnswer(0, 'A')">A. に、を</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 0); checkAnswer(0, 'B')">B. で、を</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 0); checkAnswer(0, 'C')">C. を、で</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 0); checkAnswer(0, 'D')">D. に、で</button>
         </div>
     </li>
     <li>請選出正確的日文翻譯（此題融合了<a href="te_and_ta.html#shita_toki" target="_blank">「したとき」與「するとき」的區別</a>的觀念，稍有難度）：
         <br>當我第一次看到超人力霸王的時候，我以為我遇到了上帝。<br>（此句話出自<a href="https://www.youtube.com/watch?v=c7pmVlBkzGs&list=PLOt25Zf_1wANi9AFARkX0eKstHmJwz6YH&index=51" target="_blank">《超人力霸王迪卡第五十一集：黑暗的統治者》</a>）
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer2('A')">A. 最初にウルトラマンをこの目で見たとき、私は神に出会えると思っていた。</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer2('B')">B. 最初にウルトラマンをこの目で見るとき、私は神に出会えたと思っていた。</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer2('C')">C. 最初にウルトラマンをこの目で見たとき、私は神に出会えたと思っていた。</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer2('D')">D. 最初にウルトラマンをこの目で見るとき、私は神に出会えると思っていた。</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 1); checkAnswer(1, 'A')">A. 最初にウルトラマンをこの目で見たとき、私は神に出会えると思っていた。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 1); checkAnswer(1, 'B')">B. 最初にウルトラマンをこの目で見るとき、私は神に出会えたと思っていた。</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 1); checkAnswer(1, 'C')">C. 最初にウルトラマンをこの目で見たとき、私は神に出会えたと思っていた。</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 1); checkAnswer(1, 'D')">D. 最初にウルトラマンをこの目で見るとき、私は神に出会えると思っていた。</button>
         </div>
     </li>
     <li>請比較「は」與「が」在以下句子中的差異：
         <br>① 私は先生です。<br>② 私が先生です。
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer3('A')">A. 「は」表示主題，「が」表示主語。</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer3('B')">B. 「は」表示對比，「が」表示強調。</button>
-            <button data-answer="C" onclick="selectOption(this); checkAnswer3('C')">C. 「は」表示原因，「が」表示結果。</button>
-            <button data-answer="D" onclick="selectOption(this); checkAnswer3('D')">D. 「は」與「が」在語法上無差異。</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 2); checkAnswer(2, 'A')">A. 「は」表示主題，「が」表示主語。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 2); checkAnswer(2, 'B')">B. 「は」表示對比，「が」表示強調。</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 2); checkAnswer(2, 'C')">C. 「は」表示原因，「が」表示結果。</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 2); checkAnswer(2, 'D')">D. 「は」與「が」在語法上無差異。</button>
         </div>
     </li>
     <li>請選出正確的日文翻譯：
         <br>因為快樂，所以身體很好。
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer4('A')">A. 幸せなので、体が良い。</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer4('B')">B. 幸せだので、体が良い。</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 3); checkAnswer(3, 'A')">A. 幸せなので、体が良い。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 3); checkAnswer(3, 'B')">B. 幸せだので、体が良い。</button>
         </div>
     </li>
     <li>請選出正確的接續助詞：
-        <div>疲れた（　）遅く眠った。</div>
+        <div>お腹が空いている（　）ダイエット中だから食べられない。</div>
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer5('A')">A. から</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer5('B')">B. けど</button>
-            <button data-answer="C" onclick="selectOption(this); checkAnswer5('C')">C. ので</button>
-            <button data-answer="D" onclick="selectOption(this); checkAnswer5('D')">D. と</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 4); checkAnswer(4, 'A')">A. から</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 4); checkAnswer(4, 'B')">B. けど</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 4); checkAnswer(4, 'C')">C. ので</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 4); checkAnswer(4, 'D')">D. と</button>
         </div>
     </li>
     <li>請選出正確的接續助詞：
         <div>動物園に着く（　）動物の写真を撮り始めた。</div>
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer6('A')">A. から</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer6('B')">B. けど</button>
-            <button data-answer="C" onclick="selectOption(this); checkAnswer6('C')">C. ので</button>
-            <button data-answer="D" onclick="selectOption(this); checkAnswer6('D')">D. と</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 5); checkAnswer(5, 'A')">A. から</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 5); checkAnswer(5, 'B')">B. けど</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 5); checkAnswer(5, 'C')">C. ので</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 5); checkAnswer(5, 'D')">D. と</button>
         </div>
     </li>
     <li>請選出正確的日文翻譯：
         <div>你知道昨天舉辦運動會嗎？</div>
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this); checkAnswer7('A')">A. 昨日運動会が行われると知っていますか？</button>
-            <button data-answer="B" onclick="selectOption(this); checkAnswer7('B')">B. 昨日運動会が行われたと知っていますか？</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 6); checkAnswer(6, 'A')">A. 昨日運動会が行われると知っていますか？</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 6); checkAnswer(6, 'B')">B. 昨日運動会が行われたと知っていますか？</button>
+        </div>
+    </li>
+    <li>請選出正確的日文翻譯：
+        <div>身為學生，必須學習。</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 7); checkAnswer(7, 'A')">A. 学生だので、勉強しなければならない。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 7); checkAnswer(7, 'B')">B. 学生だから、勉強しなければならない。</button>
+        </div>
+    </li>
+    <li>請選出正確的日文翻譯：
+        <div>儘管很有精神，卻不想吃東西。</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 8); checkAnswer(8, 'A')">A. 元気なのに、何も食べたくない。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 8); checkAnswer(8, 'B')">B. 元気だのに、何も食べたくない。</button>
+        </div>
+    </li>
+    <li>請選出正確的接續助詞：
+        <div>食べるのが好きだ（　）、最近はあまり食べていない。</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 9); checkAnswer(9, 'A')">A. か</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 9); checkAnswer(9, 'B')">B. が</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 9); checkAnswer(9, 'C')">C. から</button>
+        </div>
+    </li>
+    <li>
+        請選出正確的日文翻譯：
+        <div>你想成為醫師嗎？</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 10); checkAnswer(10, 'A')">A. あなたは医者になりたいですよ</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 10); checkAnswer(10, 'B')">B. あなたは医者になりたいですね</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 10); checkAnswer(10, 'C')">C. あなたは医者になりたいですか</button>
+        </div>
+    </li>
+    <li>
+        請選出正確的日文翻譯：
+        <div>您的身體真健康！</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 11); checkAnswer(11, 'A')">A. あなたの体は本当に健康ですか</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 11); checkAnswer(11, 'B')">B. あなたの体は本当に健康ですが</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 11); checkAnswer(11, 'C')">C. あなたの体は本当に健康ですので</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 11); checkAnswer(11, 'D')">D. あなたの体は本当に健康ですね</button>
         </div>
     </li>
 </ol>
@@ -427,75 +475,51 @@
 
 <script>
     let score = 0;
+    let answers = ['B', 'C', 'A', 'A', 'B', 'D', 'B', 'B', 'A', 'B', 'C', 'D'];  // 正確答案的索引從 0 開始
 
-    function selectOption(button) {
-        // 找出該題的答案區塊（父容器）
+    function selectOption(button, answer, index) {
+        // 禁用所有按鈕
         const answersDiv = button.parentNode;
-
-        // 移除該題其他按鈕的 active class
         Array.from(answersDiv.children).forEach(btn => {
-            btn.classList.remove('active');
+            btn.disabled = true; // 禁用按鈕
+            btn.classList.remove('active'); // 移除其他按鈕的 active 類
         });
 
-        // 對被點擊按鈕加上 active
+        // 對被點擊按鈕加上 active 類
         button.classList.add('active');
     }
 
-    function checkAnswer1(answer) {
-        if (answer === 'B') {
+    function checkAnswer(index, answer) {
+        if (answer === answers[index]) {
             score++;
-        } else {
         }
     }
 
-    function checkAnswer2(answer) {
-        if (answer === 'B') {
-            score++;
-        } else {
-        }
-    }
 
-    function checkAnswer3(answer) {
-        if (answer === 'A') {
-            score++;
-        } else {
-        }
-    }
-
-    function checkAnswer4(answer) {
-        if (answer === 'A') {
-            score++;
-        } else {
-        }
-    }
-
-    function checkAnswer5(answer) {
-        if (answer === 'B') {
-            score++;
-        } else {
-        }
-    }
-
-    function checkAnswer6(answer) {
-        if (answer === 'D') {
-            score++;
-        } else {
-        }
-    }
-
-    function checkAnswer7(answer) {
-        if (answer === 'B') {
-            score++;
-        } else {
-        }
-    }
-
-    // 顯示最終結果
     function showResult() {
-        let totalQuestions = 7;
+        let totalQuestions = 12;
         let percentage = (score / totalQuestions) * 100;
-        document.getElementById('result').innerHTML = `你答對了 ${score} 題，共 ${totalQuestions}題，正確率為 ${percentage.toFixed(2)}%。`;
-        window.addEventListener('unload', showResult);
+        let resultText = `你答對了 ${score} 題，共 ${totalQuestions} 題，正確率為 ${percentage.toFixed(2)}%。`;
+
+        // 顯示每題的正確答案與錯誤提示
+        let detailedResult = "";
+        for (let i = 0; i < totalQuestions; i++) {
+            let question = document.querySelectorAll('.answers')[i]; // 找到每一題的答案區塊
+            let selectedAnswer = question.querySelector('button.active'); // 找到選中的答案
+
+            // 顯示正確答案與使用者選擇的答案
+            let correctAnswer = answers[i];
+            let userAnswer = selectedAnswer ? selectedAnswer.getAttribute('data-answer') : null;
+
+            if (userAnswer === correctAnswer) {
+                detailedResult += `<p>第 ${i + 1} 題：你答對了！正確答案是 ${correctAnswer}。</p>`;
+            } else {
+                detailedResult += `<p>第 ${i + 1} 題：你答錯了。正確答案是 ${correctAnswer}，你選擇的是 ${userAnswer}。</p>`;
+            }
+        }
+
+        // 將結果顯示到頁面上
+        document.getElementById('result').innerHTML = resultText + detailedResult;
     }
 </script>
 

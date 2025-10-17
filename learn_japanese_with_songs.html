@@ -83,7 +83,31 @@
             margin: 1.5em 0;
             font-style: italic;
         }
+        .hamburger {
+            display: none;  /* 在桌面端隱藏 */
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+        }
         @media screen and (max-width: 767px) {
+            nav li{
+                text-align: center;
+            }
+            #menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            /* 顯示漢堡選單按鈕 */
+            .hamburger {
+                display: block;  /* 在手機端顯示 */
+            }
+
+            /* 顯示菜單項目（當漢堡選單被點擊時） */
+            #menu.active {
+                display: flex;
+            }
             iframe{
                 max-width:100%;
             }
@@ -131,11 +155,13 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <p>點擊上方的語言選單以切換語言</p>
 </div>
-<header><nav><ul>
+<header><nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul>
     <li><strong>本頁內容：<br></strong>
         <a>透過日文歌學日文｜我的歌單推薦</a></li>
 
-    <li><strong>其他文章連結：</strong><br>
+    <li id="menu"><strong>其他文章連結：</strong><br>
         <ol>
             <li><a href="index.html" target="_blank">自學考過日文N3的心得分享｜從零開始到合格的旅程</a></li>
             <li><a href="time_pronunciation.html" target="_blank">日文中的時間與日期唸法筆記</a></li>
@@ -152,7 +178,12 @@
         </ol>
     </li>
 </ul></nav></header>
-
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    });
+</script>
 <h1>🎵 透過日文歌學日文｜我的歌單推薦</h1>
 <p>
     你是否曾經聽過一句旋律優美的日文歌，卻不清楚其中的意思？或是在學習日文時覺得課本內容太枯燥難記？<br>

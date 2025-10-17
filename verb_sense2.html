@@ -83,6 +83,12 @@
             margin: 1.5em 0;
             font-style: italic;
         }
+        .hamburger {
+            display: none;  /* 在桌面端隱藏 */
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+        }
         @media screen and (max-width: 767px) {
             iframe{
                 max-width:80%;
@@ -113,6 +119,24 @@
                 margin-bottom: 20px;
                 background-color: pink;
             }
+            nav li{
+                text-align: center;
+            }
+            #menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            /* 顯示漢堡選單按鈕 */
+            .hamburger {
+                display: block;  /* 在手機端顯示 */
+            }
+
+            /* 顯示菜單項目（當漢堡選單被點擊時） */
+            #menu.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -132,8 +156,10 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <p>點擊上方的語言選單以切換語言</p>
 </div>
-<header><nav><ul>
-    <li><strong>本頁內容：<br></strong>
+<header><nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul>
+    <li id="menu"><strong>本頁內容：<br></strong>
         <a>動詞語感特輯：「辭書型」與「ます型」的差別、「ために」與「ように」的使用時機</a></li>
 
     <li><strong>其他文章連結：</strong><br>
@@ -153,6 +179,12 @@
         </ol>
     </li>
 </ul></nav></header>
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    });
+</script>
 <h1>🔍 動詞語感特輯：「辭書型」與「ます型」的差別、「ために」與「ように」的使用時機</h1>
 
 <div class="content">

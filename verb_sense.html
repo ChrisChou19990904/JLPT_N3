@@ -106,6 +106,12 @@
             margin: 20px auto;
             border: 10px solid red;
         }
+        .hamburger {
+            display: none;  /* 在桌面端隱藏 */
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+        }
         @media screen and (max-width: 767px) {
             iframe{
                 max-width:100%;
@@ -141,6 +147,24 @@
                 margin: 20px auto;
                 border: 10px solid red;
             }
+            nav li{
+                text-align: center;
+            }
+            #menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            /* 顯示漢堡選單按鈕 */
+            .hamburger {
+                display: block;  /* 在手機端顯示 */
+            }
+
+            /* 顯示菜單項目（當漢堡選單被點擊時） */
+            #menu.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -160,7 +184,9 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <p>點擊上方的語言選單以切換語言</p>
 </div>
-<header><nav><ul>
+<header><nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul>
     <li><strong>本頁內容：<br></strong>
         <a>動詞語感特輯：見える・聞こえる</a></li>
 
@@ -181,6 +207,12 @@
         </ol>
     </li>
 </ul></nav></header>
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    });
+</script>
 <h1>🔍 動詞語感特輯：見える・聞こえる</h1>
 <p style="background-color:#fffbe7; border-left:4px solid #f1c40f; padding:1em; border-radius:4px;">
     在開始準備 JLPT N3 之前，我就對像「見える」、「聞こえる」這類動詞的語感差異產生興趣了。<br>

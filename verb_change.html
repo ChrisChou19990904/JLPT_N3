@@ -68,6 +68,32 @@
       margin-bottom: 20px;
       background-color: pink;
     }
+    .hamburger {
+      display: none;  /* 在桌面端隱藏 */
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+    }
+    @media screen and (max-width: 767px) {
+      nav li{
+        text-align: center;
+      }
+      #menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      /* 顯示漢堡選單按鈕 */
+      .hamburger {
+        display: block;  /* 在手機端顯示 */
+      }
+
+      /* 顯示菜單項目（當漢堡選單被點擊時） */
+      #menu.active {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
@@ -86,7 +112,9 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <p>點擊上方的語言選單以切換語言</p>
 </div>
-<header><nav><ul>
+<header><nav>
+  <div class="hamburger" id="hamburger">&#9776;</div>
+  <ul>
   <li><strong>本頁內容：<br></strong>
     <a>日文動詞「する」變化大全</a></li>
 
@@ -107,6 +135,12 @@
     </ol>
   </li>
 </ul></nav></header>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  });
+</script>
 <h1>日文動詞「する」變化大全</h1>
 
 <p>

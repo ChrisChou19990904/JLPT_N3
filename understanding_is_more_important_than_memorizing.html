@@ -88,6 +88,17 @@
             #menu.active {
                 display: flex;
             }
+            .hamburger.active::before {
+                content: '\00d7';  /* 叉叉符號 */
+            }
+
+            .hamburger::before {
+                content: '\2630';  /* 三條橫線符號 */
+                font-size: 30px;
+                color: black;
+                display: block;
+                text-align: center;
+            }
             iframe {
                 max-width: 80%;
                 height: auto;
@@ -142,6 +153,8 @@
     document.getElementById('hamburger').addEventListener('click', function() {
         var menu = document.getElementById('menu');
         menu.classList.toggle('active');
+        var hamburger = document.getElementById('hamburger');
+        hamburger.classList.toggle('active');
     });
 </script>
 <h1>過目即忘，是學習過程中最正常的現象——理解，才是記憶的關鍵</h1>

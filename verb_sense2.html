@@ -137,6 +137,17 @@
             #menu.active {
                 display: flex;
             }
+            .hamburger.active::before {
+                content: '\00d7';  /* 叉叉符號 */
+            }
+
+            .hamburger::before {
+                content: '\2630';  /* 三條橫線符號 */
+                font-size: 30px;
+                color: black;
+                display: block;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -183,6 +194,8 @@
     document.getElementById('hamburger').addEventListener('click', function() {
         var menu = document.getElementById('menu');
         menu.classList.toggle('active');
+        var hamburger = document.getElementById('hamburger');
+        hamburger.classList.toggle('active');
     });
 </script>
 <h1>🔍 動詞語感特輯：「辭書型」與「ます型」的差別、「ために」與「ように」的使用時機</h1>

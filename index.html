@@ -49,40 +49,12 @@
       color: #333;
       padding: 20px;
     }
-    h1, h2, h3 {
+    h1{
       color: #0055aa;
-    }
-    .textbook {
-      width: 100%;
-      max-width: 400px;
-      display: block;
-      margin: 10px auto;
-      border: 5px solid blue;
     }
     .my_appearance{
       display: block;
       margin: 10px auto;
-    }
-    iframe{
-        width: 100%;
-        max-width: 560px;
-        height: 315px;
-        display: block;
-      text-align: left;
-        margin: 20px auto;
-        border: 5px solid red;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin: 20px 0;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
-      padding: 10px;
-      text-align: center;
     }
     a{
       color: #2980b9;
@@ -124,6 +96,7 @@
     nav{
       margin-bottom: 20px;
       background-color: pink;
+      height:200%
     }
     #social-share {
       left: 10px;
@@ -148,11 +121,37 @@
     #social-share a#twitter-share {
       color: #1DA1F2;
     }
+    /* 預設情況下，menu 隱藏 */
+    #menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+    /* 當菜單被打開時，menu 顯示 */
+    #menu.active {
+      display: flex;
+    }
+
     .hamburger {
-      display: none;  /* 在桌面端隱藏 */
+      display: block;  /* 確保顯示 */
       cursor: pointer;
       font-size: 30px;
       color: black;
+      position: absolute;
+      right: 20px;  /* 正確放置 */
+      top: 15px;
+    }
+
+    .hamburger.active::before {
+      content: '\00d7';  /* 叉叉符號 */
+    }
+
+    .hamburger::before {
+      content: '\2630';  /* 三條橫線符號 */
+      font-size: 30px;
+      color: black;
+      display: block;
+      text-align: center;
     }
     @media screen and (max-width: 767px) {
       iframe{
@@ -209,8 +208,6 @@
         display: flex;
       }
     }
-  </style>
-  <style>
     #comments > div {
       margin-bottom: 20px;
       padding: 10px;
@@ -247,138 +244,38 @@
   <p>點擊上方的語言選單以切換語言</p>
 </div>
 <header><nav>
-  <div class="hamburger" id="hamburger">&#9776;</div>
-  <ul>
-  <li><strong>本頁內容：<br></strong>
-    <a>自學考過日文N3的心得分享｜從零開始到合格的旅程</a></li>
-
-  <li id="menu"><strong>其他文章連結：</strong><br>
-    <ol>
-      <li><a href="time_pronunciation.html" target="_blank">日文中的時間與日期唸法筆記</a></li>
-      <li><a href="passport_vocabularies.html" target="_blank">機場用語中日朗讀表｜出國旅遊必備單字</a></li>
-      <li><a href="learn_japanese_with_songs.html" target="_blank">透過日文歌學日文｜我的歌單推薦</a></li>
-        <li><a href="music_jargon.html" target="_blank">日文大調與樂器唸法練習（外來語＋本土唱名）</a></li>
-      <li><a href="understanding_is_more_important_than_memorizing.html" target="_blank">透過備考日文檢定、程式設計、學習新曲子的經驗談論如何克服過目即忘的問題</a></li>
-    <li><a href="verb_change.html" target="_blank">日文動詞「する」變化大全</a></li>
-      <li><a href="category_of_verb.html" target="_blank">日文動詞變化大全：一類、二類、三類動詞</a></li>
-      <li><a href="verb_sense.html" target="_blank">動詞語感特輯：見える・聞こえる</a></li>
-      <li><a href="verb_sense2.html" target="_blank">動詞語感特輯：「辭書型」與「ます型」的差別、「ために」與「ように」的使用時機</a></li>
-      <li><a href="adjective.html" target="_blank">い形容詞 vs な形容詞：差別與用法</a></li>
-      <li><a href="te_and_ta.html" target="_blank">て型與た型的用法教學</a></li>
-      <li><a href="particle.html" target="_blank">日文助詞一覽與用法整理</a></li>
-    </ol>
-  </li>
-</ul></nav></header>
+  <div class="hamburger" id="hamburger"></div>
+  <ol id="menu">
+      <li><a href="N3.html" target="_blank">準備N3的過程</a></li>
+    <li><a href="time_pronunciation.html" target="_blank">時間與日期的唸法</a></li>
+    <li><a href="passport_vocabularies.html" target="_blank">機場用語</a></li>
+    <li><a href="learn_japanese_with_songs.html" target="_blank">透過日文歌學日文｜我的歌單推薦</a></li>
+    <li><a href="music_jargon.html" target="_blank">日文的樂理術語</a></li>
+    <li><a href="understanding_is_more_important_than_memorizing.html" target="_blank">透過備考日文檢定、程式設計、學習新曲子的經驗談論如何克服過目即忘的問題</a></li>
+    <li><a href="verb_change.html" target="_blank">「する」變化大全</a></li>
+    <li> <a href="category_of_verb.html" target="_blank">動詞變化大全：一類、二類、三類動詞</a></li>
+    <li> <a href="verb_sense.html" target="_blank">「見える」與「聞こえる」</a></li>
+    <li><a href="verb_sense2.html" target="_blank">「辭書型」與「ます型」的差別、「ために」與「ように」的使用時機</a></li>
+    <li><a href="adjective.html" target="_blank">い形容詞vsな形容詞</a></li>
+    <li><a href="te_and_ta.html" target="_blank">て型與た型的差別與用法</a></li>
+    <li><a href="particle.html" target="_blank">日文助詞一覽與用法整理</a></li>
+  </ol>
+</nav></header>
 <script>
-  document.getElementById('hamburger').addEventListener('click', function() {
-    var menu = document.getElementById('menu');
-    menu.classList.toggle('active');
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', function() {
+      menu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
   });
 </script>
-<h1>🎌 自學考過日文N3的心得分享｜從零開始到合格的旅程</h1>
-<p>大家好，我是一位語言學習愛好者，今天想和大家分享我 <strong>靠自學考過 JLPT N3</strong>（日語能力試驗）的心得與過程。</p>
-<h2>📚 為什麼學日文？</h2>
-<p>高中時我以英文作為主力衝刺科目，兩年來英文成績都維持在全校前 <strong>5%</strong>。在<strong>完全沒有補習的情況下</strong>，我在學測英文考取了 <strong>13 級分（滿分為 15 級分）</strong>。</p>
-<p>不過我認為只會英文還不夠——為了在全球化時代中更具競爭力，我選擇了與中文有漢字共通性的 <strong>日語作為第二外語</strong>。</p>
-<p>雖然高中提供日文課程作為第二外語，但課程內容偏淺，僅教到ます形及基本寒暄語，無法滿足我深入學習的渴望。</p>
-<h2>🧱 打好基礎：自學第一步</h2>
-<p>我在書店找到了一本很實用的工具書：</p>
-<ul>
-  <li><strong>書名：</strong>這就是你要的日語文法書</li>
-  <li><strong>特色：</strong>涵蓋各種動詞變化（意量形、て形、た形、命令形、使役、被動、使役被動、可能型等）和形容詞變化（現在式、過去式、否定型、副詞型態等）</li>
-  <li><strong>缺點：</strong>雖然文法整理完整，但 <strong>單字量不足</strong>，無法應付考試需求</li>
-</ul>
-<img class="textbook" src="這就是你要的日語文法書封面.webp" alt="這就是你要的日語文法書 書本封面" />
-<img class="textbook" src="這就是你要的日語文法書背面.webp" alt="這就是你要的日語文法書 書本背面" />
-<h2>🎬 看日劇學日文</h2>
-<p>接著我透過看<strong>日劇學日文</strong>，特別建議使用<strong>中日雙語字幕</strong>，因為：</p>
-<ul>
-  <li>幫助理解句型與語氣</li>
-  <li>累積自然用法與口語表達</li>
-  <li>在潛移默化中增加單字量</li>
-</ul>
-<p>我個人是特攝劇的愛好者，以下是推薦資源：</p>
-<ol>
-  <li><a href="https://www.youtube.com/watch?v=_IGrhlkUx-o&list=PLOt25Zf_1wANi9AFARkX0eKstHmJwz6YH&index=53" target="_blank" rel="noopener noreferrer">迪迦奥特曼 OV.古代复苏的巨人</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/_IGrhlkUx-o?si=_ofoXXj9ZdTyBfmG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://www.youtube.com/watch?v=pi23sR79rF8&list=PLOt25Zf_1wANi9AFARkX0eKstHmJwz6YH&index=54" target="_blank">迪迦奧特曼劇場版：最終聖戰</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/pi23sR79rF8?si=tx9pOeHQOFFSvJ9u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/HJxjPySfvxE?si=GGTAgPbkN-ynmo32" target="_blank" rel="noopener noreferrer">戴拿奥特曼剧场版：迪迦奥特曼&戴拿奥特曼_光之星的战士们</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/HJxjPySfvxE?si=nnDGXBezwmUScg9S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/M9V5Bsxjym4?si=Lhvt2zvyLoZ9o9Kl" target="_blank" rel="noopener noreferrer">迪迦奥特曼&戴拿奥特曼&盖亚奥特曼 剧场版 超时空决战</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/M9V5Bsxjym4?si=PFgfXGiniW1ekuJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/G4Rj3GKnLdA?si=sJX6GmVRMNhLBPji" target="_blank" rel="noopener noreferrer">盖亚奥特曼 OV 盖亚再现</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/G4Rj3GKnLdA?si=t4gHuvgPELQ38D54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/TwX-Kqqzmog?si=9u7C1kG55CQshAEr" target="_blank" rel="noopener noreferrer">高斯奥特曼剧场版：第一次接触</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/TwX-Kqqzmog?si=9c7eeUUmRWQLRuYR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/dEX8nFxEAls?si=-oszGC8CHcEQvX4j" target="_blank" rel="noopener noreferrer">高斯奥特曼剧场版：藍色星球</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/dEX8nFxEAls?si=5gmuRlW8aSmFBhXN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/2q5n5Njzy9M?si=40-yN4tVemHbbCu9" target="_blank" rel="noopener noreferrer">高斯奥特曼剧场版：高斯奥特曼VS杰斯提斯奥特曼_最终决战</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/2q5n5Njzy9M?si=ID02qN_xJR9-BlIz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/aI6NtPWUwIk?si=k1liXbC1hpgzgQTd" target="_blank" rel="noopener noreferrer">夢比優斯奧特曼劇場版：夢比優斯與奧特兄弟</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/aI6NtPWUwIk?si=5-vHWn10cmaF4gAD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/Z65drtftFhw?si=QQKwGB-YT-TEja7F" target="_blank" rel="noopener noreferrer">大决战！超奥特八兄弟</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/Z65drtftFhw?si=Ml3kXKDDo1cH5mhk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://youtu.be/HQW8f-QSe90?si=g09QzZZO98evzM7V" target="_blank" rel="noopener noreferrer">奧特曼傳奇</a><iframe style="margin: 20px 0;" width="560" height="315" src="https://www.youtube.com/embed/HQW8f-QSe90?si=Wt2TPLGaHQP5Jgcn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-  <li><a href="https://www.youtube.com/playlist?list=PLOt25Zf_1wAOy-5fjHI6ruJyESHhsRNmC" target="_blank" rel="noopener noreferrer">艾克斯奧特曼全集（中日字幕版）</a></li>
-  <li><a href="https://www.youtube.com/playlist?list=PLOt25Zf_1wANQ8_6YRXRYXEs91nC3LAii" target="_blank" rel="noopener noreferrer">歐布奧特曼原生之初全集（中日字幕版）</a></li>
-  <li><a href="https://www.youtube.com/playlist?app=desktop&list=PLOt25Zf_1wANNBs-t00xNMmd_4qcdgOvc" target="_blank" rel="noopener noreferrer">捷德奧特曼全集（中日字幕版）</a></li>
-  <li><a href="https://www.youtube.com/playlist?list=PLOt25Zf_1wAPk6mR4MQ0D26hh0DKqGzwL" target="_blank" rel="noopener noreferrer">澤塔奧特曼全集（中日字幕版）</a></li>
-  <li><a href="https://www.youtube.com/playlist?list=PLOt25Zf_1wAMo9vUrPBDAOOAQQXxRXC9K" target="_blank" rel="noopener noreferrer">特利迦奧特曼全集（中日字幕版）</a></li>
-  <li><a href="https://www.youtube.com/playlist?list=PLOt25Zf_1wAOQi4GLbtDDoAKrQGHZUmMd" target="_blank" rel="noopener noreferrer">布萊澤奧特曼全集（中日字幕版）</a></li>
-</ol>
-<p><strong>奧特曼系列不只是兒童節目</strong>，劇中常常融入對人類社會的諷刺與省思，內容不乏深度與哲理。</p>
-<p>如果你只是想看打怪的場景，那麼快轉到每集的倒數三分鐘通常就能看到戰鬥高潮；但這麼做會錯過整部作品的真正意義。</p>
-<p>這些作品不僅有激烈的打鬥，還能讓你在觀看的過程中思考生命、社會、環境等議題。所以，若你願意深入，會發現每個怪獸與奧特曼的戰鬥背後，其實都是對「人類」與「自然」的深刻反思。</p>
-<p>需要注意的是，部分奧特曼作品是以單元劇形式播出，因此我沒有將這些單元劇嵌入網頁中。這些影片是以播放列表形式提供的，方便大家逐集觀看。如果將這些單元劇全部嵌入，會影響網頁的加載速度，甚至可能導致網頁崩潰。並且，本網頁的核心目標是教大家如何準備日文N3，而不是介紹奧特曼的故事。</p>
-<h2>📘 考試前的實戰準備</h2>
-<h3>📗 單字書：新日檢N3關鍵單字</h3>
-<p>這是我準備單字的主力書籍，內容設計紮實：</p>
-<img class="textbook" src="新日檢單字書封面.webp" alt="新日檢N3關鍵單字 書本封面" />
-<img class="textbook" src="新日檢單字書背面.webp" alt="新日檢N3關鍵單字 書本背面" />
-<ul>
-  <li>內容涵蓋N3常考單字、例句與題目練習（選擇、配對、順序）</li>
-  <li>我是邊透過這本書準備考試，邊兼顧大學功課與學開車，真的滿吃力</li>
-</ul>
-<h3>📖 模擬試題訓練</h3>
-<p>接下來我使用這本模擬考題書進行實戰演練：</p>
-<img class="textbook" src="日本語能力試驗對應模擬考試問題集.webp" alt="日本語能力試驗對應模擬考試問題集" />
-<img class="textbook" src="日本語能力試驗對應模擬考試問題集背面.webp" alt="日本語能力試驗對應模擬考試問題集背面" />
-<p>看完單字書後我開始練N3題目，發現文法和閱讀部分還有不少新用法，於是上網查資料並整理筆記補強。</p>
-<h2>🎧 聽力練習</h2>
-<p>平常沒有持續聽NHK等日文媒體，聽力是在考前一週開始密集練習的。</p>
-<p>感謝YouTube上許多教學影片，我使用它們來聽過去模擬試題。雖然最終聽力分數只有 20 分，但剛好過線也算是鬆一口氣。</p>
-<p>以下是我練聽力的影片：</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/cG05bbFbtes?si=OjeIEHR6MZC7B59z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KU0tlJmxaPg?si=NMOvSMEXaqZfQOo5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JRGyX1qXayk?si=oxusYTvMLxmpnOT5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-ctGw8GVtBw?si=oqjTg2an3i8SVml0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/STgRpvQItCs?si=3G1__XB9tenPe5kW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6o0vIkPrKwY?si=GqQv6gqLjRqT6oFK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <h2>📊 我的N3實際成績</h2>
-<table>
-  <tr>
-    <th>項目</th>
-    <th>得分（滿分60）</th>
-    <th>合格標準</th>
-  </tr>
-  <tr>
-    <td>言語知識（單字+文法）</td>
-    <td>49</td>
-    <td>≥ 19</td>
-  </tr>
-  <tr>
-    <td>閱讀</td>
-    <td>34</td>
-    <td>≥ 19</td>
-  </tr>
-  <tr>
-    <td>聽力</td>
-    <td>20</td>
-    <td>≥ 19</td>
-  </tr>
-  <tr>
-    <th colspan="2">總分：103 / 180</th>
-    <th>✅ 合格！（總分需 ≥ 95）</th>
-  </tr>
-</table>
-<img class="transcript" src="日檢成績單.webp" alt="JLPT N3 成績單" />
-<h2>🎉 結語</h2>
-<p>我是在吃午餐時查到成績的，看到合格的那一刻真的超級開心！</p>
-<p>自學的這條路雖然累，但能把熱情轉化為成果，真的很有成就感。希望這篇心得能幫助到正準備 JLPT 的你！</p>
-<p><strong>不補習也能考過N3，關鍵是熱情、方法與堅持！</strong></p>
-<h2>💬 歡迎交流</h2>
-<p>如果你對日語學習、JLPT考試、語言方法，或是特攝劇也感興趣，歡迎留言！</p>
+<h1>我的日文專案</h1>
+<p>我創作這個專案是為了分享我準備日檢的過程、學習心得，以及教大家我會的日文知識。</p>
+<p>點選右上角的三條線就能看到各種主題的連結。</p>
+<p>希望能幫助正在學習日文的朋友們，一起加油！</p>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
@@ -444,7 +341,7 @@
   <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
 </div>
   作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a>
-  <br>創作日期：西元二零二五年六月五日<br>
+  <br>創作日期：西元二零二五年十月十八日<br>
   <img width="300" height="400" class="my_appearance" src="my_appearance2.jpg" alt="自拍">
 <script>
   if ('serviceWorker' in navigator) {

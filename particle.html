@@ -204,12 +204,13 @@
     </tr>
     <tr>
         <td>を</td>
-        <td>直接受詞</td>
+        <td>直接受詞、穿過某個物體</td>
         <td>私はコーヒーを飲んでいる<br>（我正在喝咖啡）</td>
+        <td>飛行機は空を飛んでいる<br>（飛機正在飛越天空）</td>
     </tr>
     <tr>
         <td>に</td>
-        <td>時間、目的地、受益對象、所在地、改變的狀態、被動語態中的主動者</td>
+        <td>時間、目的地、受益對象、所在地、改變的狀態、被動語態中的主動者、為了做某件事（前面放動詞ます形去掉ます）</td>
         <td>
             <ol>
                 <li>飛行機は日曜日の午前八時に離陸する<br>（飛機於星期天的上午八點起飛）</li>
@@ -219,6 +220,7 @@
                 <li>私は東京に住んでいる<br>（我住在東京）</li>
                 <li>あなたを貶そうとしている人は誰より君になりたい<br>（拼命詆毀你的人比任何人都想成為你）</li>
                 <li>子供さえ一人もいない政治屋が「子供を産むことは国家を強くすることだ」と言った時、彼女に騙されちゃいけない！<br>（當那位連一個孩子都沒生的政客說：「多生小孩，讓國家強盛！」的時候，請各位別被她騙了！）</li>
+                <li>ウルトラマンは地球へ人間を守りに来た<br>（超人力霸王為了保護人類而來到地球）</li>
             </ol>
         </td>
     </tr>
@@ -506,13 +508,32 @@
             <button data-answer="D" onclick="selectOption(this, 'D', 11); checkAnswer(11, 'D')">D. あなたの体は本当に健康ですね</button>
         </div>
     </li>
+    <li>請選出正確的格助詞：
+        <div>ウルトラマンは光の国（）地球（）人間（）救い（）飛んで来た</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 12); checkAnswer(12, 'A')">A. から、に、を、へ</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 12); checkAnswer(12, 'B')">B. へ、に、を、に</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 12); checkAnswer(12, 'C')">C. から、へ、を、に</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 12); checkAnswer(12, 'D')">D. から、へ、に、を</button>
+        </div>
+    </li>
+    <li>請選出正確的日文翻譯：
+        <div>只要你穿過這座橋，你就能抵達異次元了</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 13); checkAnswer(13, 'A')">A. この橋を渡ったと、異次元に到達できる。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 13); checkAnswer(13, 'B')">B. この橋に渡ると、異次元に到達できる。</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 13); checkAnswer(13, 'C')">C. この橋に渡ったと、異次元に到達できる。</button>
+            <button data-answer="D" onclick="selectOption(this, 'D', 13); checkAnswer(13, 'D')">D. この橋を渡ると、異次元に到達できる。</button>
+        </div>
+
+    </li>
 </ol>
 <button onclick="showResult(this)">查看結果</button>
 <div id="result" class="result"></div>
 
 <script>
     let score = 0;
-    let answers = ['B', 'C', 'A', 'A', 'B', 'D', 'B', 'B', 'A', 'B', 'C', 'D'];  // 正確答案的索引從 0 開始
+    let answers = ['B', 'C', 'A', 'A', 'B', 'D', 'B', 'B', 'A', 'B', 'C', 'D', 'C', 'D'];  // 正確答案的索引從 0 開始
 
     function selectOption(button, answer, index) {
         // 禁用所有按鈕
@@ -534,7 +555,7 @@
 
 
     function showResult() {
-        let totalQuestions = 12;
+        let totalQuestions = 14;
         let percentage = (score / totalQuestions) * 100;
         let resultText = `你答對了 ${score} 題，共 ${totalQuestions} 題，正確率為 ${percentage.toFixed(2)}%。`;
 

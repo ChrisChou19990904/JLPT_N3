@@ -211,6 +211,17 @@
       #menu.active {
         display: flex;
       }
+      .hamburger.active::before {
+        content: '\00d7';  /* 叉叉符號 */
+      }
+
+      .hamburger::before {
+        content: '\2630';  /* 三條橫線符號 */
+        font-size: 30px;
+        color: black;
+        display: block;
+        text-align: center;
+      }
     }
   </style>
   <style>

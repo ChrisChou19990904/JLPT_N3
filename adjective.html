@@ -76,6 +76,21 @@
             #menu.active {
                 display: flex;
             }
+            /* 顯示菜單項目（當漢堡選單被點擊時） */
+            #menu.active {
+                display: flex;
+            }
+            .hamburger.active::before {
+                content: '\00d7';  /* 叉叉符號 */
+            }
+
+            .hamburger::before {
+                content: '\2630';  /* 三條橫線符號 */
+                font-size: 30px;
+                color: black;
+                display: block;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -122,6 +137,8 @@
     document.getElementById('hamburger').addEventListener('click', function() {
         var menu = document.getElementById('menu');
         menu.classList.toggle('active');
+        var hamburger = document.getElementById('hamburger');
+        hamburger.classList.toggle('active');
     });
 </script>
 <h1>い形容詞 vs な形容詞：差別與用法</h1>

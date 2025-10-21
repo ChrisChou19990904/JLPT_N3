@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日語文法：動名詞、感官動詞與「しる」的區別</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        a{
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #2980b9;
+        }
+        nav{
+            margin-bottom: 20px;
+            background-color: pink;
+        }
+        #social-share {
+            left: 10px;
+            margin-top: 10px;
+        }
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share a:hover {
+            text-decoration: underline;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share {
+            color: #4267B2;
+        }
+        #social-share a#line-share {
+            color: #00C300;
+        }
+        #social-share a#twitter-share {
+            color: #1DA1F2;
+        }
+        .hamburger {
+            display: none;  /* 在桌面端隱藏 */
+            cursor: pointer;
+            font-size: 30px;
+            color: black;
+        }
+        @media screen and (max-width: 767px) {
+            nav li{
+                text-align: center;
+            }
+            #menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            /* 顯示漢堡選單按鈕 */
+            .hamburger {
+                display: block;  /* 在手機端顯示 */
+            }
+
+            /* 顯示菜單項目（當漢堡選單被點擊時） */
+            #menu.active {
+                display: flex;
+            }
+            .hamburger.active::before {
+                content: '\00d7';  /* 叉叉符號 */
+            }
+
+            .hamburger::before {
+                content: '\2630';  /* 三條橫線符號 */
+                font-size: 30px;
+                color: black;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,zh-TW,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
+<header><nav>
+    <div class="hamburger" id="hamburger"></div>
+    <ul>
+        <li><strong>本頁內容：<br></strong>
+            <a>日語中的動名詞：「辭書型+の」與「辭書型+こと」的區別</a></li>
+
+        <li id="menu"><strong>其他文章連結：</strong><br>
+            <ol>
+                <li><a href="index.html" target="_blank">首頁</a></li>
+                <li><a href="N3.html" target="_blank">準備N3的過程</a></li>
+                <li><a href="time_pronunciation.html" target="_blank">時間與日期的唸法</a></li>
+                <li><a href="passport_vocabularies.html" target="_blank">機場用語</a></li>
+                <li><a href="learn_japanese_with_songs.html" target="_blank">透過日文歌學日文｜我的歌單推薦</a></li>
+                <li><a href="music_jargon.html" target="_blank">日文的樂理術語</a></li>
+                <li><a href="understanding_is_more_important_than_memorizing.html" target="_blank">透過準備證照考試與學習新曲子的經驗談論如何克服過目即忘</a></li>
+                <li><a href="verb_change.html" target="_blank">「する」變化大全</a></li>
+                <li><a href="category_of_verb.html" target="_blank">動詞變化大全：一類、二類、三類動詞</a></li>
+                <li><a href="verb_sense.html" target="_blank">「見える」與「聞こえる」</a></li>
+                <li><a href="verb_sense2.html" target="_blank">「辭書型」、「ます型」、「ために」、「ように」</a></li>
+                <li><a href="adjective.html" target="_blank">い形容詞vsな形容詞</a></li>
+                <li><a href="te_and_ta.html" target="_blank">て型與た型的差別與用法</a></li>
+                <li><a href="particle.html" target="_blank">日文助詞一覽與用法整理</a></li>
+            </ol>
+        </li>
+    </ul></nav></header>
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+        var hamburger = document.getElementById('hamburger');
+        hamburger.classList.toggle('active');
+    });
+</script>
+<h1>日語中的動名詞：「辭書型+の」與「辭書型+こと」的區別</h1>
+
+<h2>1. 動名詞的用法</h2>
+<p>
+    在日語中，動名詞通常是指將動詞名詞化，將動作或狀態抽象化成名詞形式。常見的動名詞形式包括 <code>の</code> 和 <code>こと</code>，這兩個形式有不同的用途和語感。
+</p>
+<p>
+    - **動詞 + の**：常用於具體的行為或動作，強調的是具體的動作本身，通常用於感官動詞和日常會話中。<br>
+    - **動詞 + こと**：則用於表示對某個事實、情況或知識的了解，通常用於較抽象的描述或書面語。
+</p>
+
+<h2>2. 感官動詞 + の</h2>
+<p>
+    當動詞後接 <code>の</code> 時，這個結構用來名詞化動作或行為，特別是與感官動詞（例如 <code>見る</code>、<code>聞く</code>、<code>感じる</code>）搭配時，表示對某個動作的感知或經歷。
+</p>
+<p>
+    這裡強調的是具體的行為，例如「看到某人做某事」或者「聽見某人做某事」。
+</p>
+<div class="example">
+    <strong>例子：</strong><br>
+    <code>彼が歌うのを聞いた。</code>（我聽見他唱歌）<br>
+    這裡的 <code>歌うの</code> 強調的是「唱歌這個行為」，即聽見的是「唱歌」這個具體的動作。
+</div>
+
+<h2>3. しる + こと</h2>
+<p>
+    當動詞 <code>しる</code>（知道）與 <code>こと</code> 搭配時，表示知道某件事或某個事實。這個結構多用於抽象的知識或經驗，與具體的感知行為不同，這裡強調的是對事實的理解或對某些情況的知識。
+</p>
+<div class="example">
+    <strong>例子：</strong><br>
+    <code>彼が歌ったことを知っている。</code>（我知道他曾經唱過歌）<br>
+    這裡的 <code>歌ったこと</code> 指的是「他唱歌這件事」，強調的是一個你知道的事實，而不是你親自聽見的動作。
+</div>
+
+<h2>4. 動名詞用法比較</h2>
+<table>
+    <tr>
+        <th>結構</th>
+        <th>用途</th>
+        <th>語感</th>
+        <th>例子</th>
+    </tr>
+    <tr>
+        <td><code>動詞 + の</code></td>
+        <td>強調感官動詞後的具體行為或動作，表示你親自感知到的行為。</td>
+        <td>具體行為、動作</td>
+        <td><code>彼が歌うのを聞いた。</code>（我聽見他唱歌）</td>
+    </tr>
+    <tr>
+        <td><code>動詞 + こと</code></td>
+        <td>強調知道某個事實或經歷，表示對某個情況或事實的理解。</td>
+        <td>抽象知識、事實</td>
+        <td><code>彼が歌ったことを知っている。</code>（我知道他曾經唱過歌）</td>
+    </tr>
+</table>
+
+<h2>5. 其他動詞搭配「こと」的範例</h2>
+<p>除了「しる」，還有許多動詞可以與「こと」搭配，表示了解某些事實或情況。</p>
+<ul>
+    <li>
+        <h3>思う（おもう） – 認為、想</h3>
+        <div class="example">
+            <strong>例子：</strong><br>
+            <code>彼が来ることを思う。</code>（我認為他會來）<br>
+            <code>それが正しいことだと思う。</code>（我認為那是對的）
+        </div>
+    </li>
+    <li>
+        <h3>信じる（しんじる） – 相信</h3>
+        <div class="example">
+            <strong>例子：</strong><br>
+            <code>彼が言ったことを信じる。</code>（我相信他說的話）<br>
+            <code>それが本当のことだと信じている。</code>（我相信那是真的）
+        </div>
+    </li>
+    <li>
+        <h3>決める（きめる） – 決定</h3>
+        <div class="example">
+            <strong>例子：</strong><br>
+            <code>どこに行くか決めることが大事だ。</code>（決定去哪裡是很重要的）<br>
+            <code>何をするか決めることにした。</code>（我決定做某件事）
+        </div>
+    </li>
+    <li>
+        <h3>考える（かんがえる） – 思考、考慮</h3>
+        <div class="example">
+            <strong>例子：</strong><br>
+            <code>未来のことを考える。</code>（考慮未來的事）<br>
+            <code>その問題について考えることが必要だ。</code>（思考這個問題是必要的）
+        </div>
+    </li>
+    <li>
+        <h3>覚える（おぼえる） – 記住、學會</h3>
+        <div class="example">
+            <strong>例子：</strong><br>
+            <code>日本語を覚えることは難しい。</code>（學日語很難）<br>
+            <code>彼が言ったことを覚えている。</code>（我記得他說過的話）
+        </div>
+    </li>
+</ul>
+
+<h2>6. 總結</h2>
+<p>
+    - 使用 <code>の</code>：當動詞後接 <code>の</code> 時，表示對具體行為的感知，特別是在感官動詞中，強調的是行為的過程或動作本身。<br>
+    - 使用 <code>こと</code>：當動詞後接 <code>こと</code> 時，表示你對某個事實或經歷的了解，強調的是抽象的知識或事實，而不是具體的行為。
+</p>
+<p>這些結構在日語中有著非常重要的區別，掌握它們能幫助你更精確地表達行為的感知與知識的理解。</p>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
+</script>
+
+<div class="fb-comments"
+     data-href="https://chrischou19990904.github.io/harp_app_introduction"
+     data-width="100%"
+     data-numposts="5">
+</div>
+<script>
+    document.getElementById('comment-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const imageFile = document.getElementById('image').files[0];
+        const videoFile = document.getElementById('video').files[0];
+
+        if (!name || !message) {
+            alert('請填寫名字和留言內容');
+            return;
+        }
+
+        const commentDiv = document.createElement('div');
+        commentDiv.innerHTML = `<p><strong>${name}</strong>: ${message}</p>`;
+
+        const mediaWrapper = document.createElement('div');
+        mediaWrapper.classList.add('media-wrapper');
+
+        if (imageFile) {
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(imageFile);
+            img.alt = '上傳的圖片';
+            mediaWrapper.appendChild(img);
+        }
+
+        if (videoFile) {
+            const video = document.createElement('video');
+            video.src = URL.createObjectURL(videoFile);
+            video.controls = true;
+            mediaWrapper.appendChild(video);
+        }
+
+        // 只有當有圖片或影片時才加 mediaWrapper
+        if (mediaWrapper.children.length > 0) {
+            commentDiv.appendChild(mediaWrapper);
+        }
+
+        document.getElementById('comments').appendChild(commentDiv);
+
+        this.reset();
+    });
+</script>
+<ul id="messages"></ul>
+<!-- 社群分享按鈕區塊 -->
+<div id="social-share" style="margin-top: 20px;">
+    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a>
+<br>創作日期：西元二零二五年十月二十一日<br>
+<img width="300" height="400" class="my_appearance" src="my_appearance2.jpg" alt="自拍">
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('Service Worker 註冊成功'))
+            .catch(err => console.log('Service Worker 註冊失敗', err));
+    }
+</script>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
+</body>
+</html>

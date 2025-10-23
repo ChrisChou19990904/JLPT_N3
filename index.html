@@ -279,12 +279,26 @@
 <p>點選右上角的三條線就能看到各種主題的連結。</p>
 <p>希望能幫助正在學習日文的朋友們，一起加油！</p>
 <em>下方的插入影片為我的日檢合格證書與成績單</em>
-<video controls style="border:10px solid blue;"><source src="日檢成績單.mp4"></video>
+<br>
+<video width="504" height="672" id="japanese_language_N3_certificate" controls style="border:10px solid blue;"><source src="日檢成績單.mp4"></video>
+<div id="videoInfo"></div>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
 </script>
+<script>
+  var video = document.getElementById("japanese_language_N3_certificate");
+  // 確保元數據加載完成後才執行
+  video.onloadedmetadata = function() {
+    // 獲取影片的長與寬
+    var width = video.videoWidth;
+    var height = video.videoHeight;
 
+    // 顯示影片的尺寸資訊
+    var infoDiv = document.getElementById("videoInfo");
+    infoDiv.innerHTML = "該影片的原始解析度為 " + width + "px x " + height + "px。<span style='display:block;'>為了提升用戶觀看體驗，我已將影片的顯示尺寸調整為 504px x 672px，讓畫面顯示更加舒適。</span>";
+  };
+</script>
 <div class="fb-comments"
      data-href="https://chrischou19990904.github.io/harp_app_introduction"
      data-width="100%"

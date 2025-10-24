@@ -463,6 +463,44 @@
     </tr>
     </thead>
     <tbody>
+    <!-- より・よりも（格助詞） -->
+    <tr>
+        <td>より</td>
+        <td>
+            ① 比較基準<br>
+            ② 起點・出發點<br>
+            ③ 手段・方法<br>
+            ④ 對比・選擇（與其～不如～）
+        </td>
+        <td>
+            ① A より B（B 比 A 更～）<br>
+            ② 名詞（時間・場所）＋より（從～起）<br>
+            ③ 名詞＋より（透過～／經由～）<br>
+            ④ 動詞原形／否定形＋より、～た形+ほうがいい／ましだ（與其～不如～）
+        </td>
+        <td>
+            東京より大阪のほうが暑い。（大阪比東京更熱。）<br>
+            明日より新しい制度が始まります。（從明天起新制度開始。）<br>
+            メールよりご連絡ください。（請透過郵件聯絡。）<br>
+            泣くより笑ったほうがいい。（與其哭，不如笑。）<br>
+            行かないより行ったほうがましだ。（不去不如去好。）
+        </td>
+    </tr>
+
+    <tr>
+        <td>よりも</td>
+        <td>
+            「より」＋副助詞「も」<br>
+            意為「比～更～」，語氣較強或更自然
+        </td>
+        <td>
+            A よりも B（比～更～）
+        </td>
+        <td>
+            去年よりも日本語が上手になりました。（比去年更會說日語了。）<br>
+            私よりもあなたのほうが大事です。（比起我，你更重要。）
+        </td>
+    </tr>
     <tr>
         <td>だけ</td>
         <td>
@@ -544,7 +582,7 @@
         <td>ほど</td>
         <td>
             <ol>
-                <li>程度</li>
+                <li>不如</li>
                 <li>越…越…（搭配動詞假定型ば）</li>
                 <li>到...的地步（誇張說法，搭配辭書型）</li>
                 <li>以至於（事實，搭配辭書型）</li>
@@ -552,7 +590,7 @@
         </td>
         <td>
             <ol>
-                <li>あなた<strong>ほど</strong>優しい人はいない。<br>（沒有比你更溫柔的人）</li>
+                <li>キャプテンアメリカはドラキュラ伯爵<strong>ほど</strong>速くない。<br>（美國隊長不如德古拉伯爵快）</li>
                 <li>勉強すればする<strong>ほど</strong>、頭が良くなる。<br>（越用功讀書，頭腦就越好）</li>
                 <li>驚く<strong>ほど</strong>美しい景色。<br>（美得令人驚嘆的風景）</li>
                 <li>歩けない<strong>ほど</strong>疲れた。<br>（累到走不動）</li>
@@ -819,10 +857,9 @@
     <li>請選出「ほど」在下方的錯誤選項：
         <div>彼は驚く（　）優しい。</div>
         <div class="answers">
-            <button data-answer="A" onclick="selectOption(this, 'A', 9); checkAnswer(23, 'A')">A. 程度</button>
+            <button data-answer="A" onclick="selectOption(this, 'A', 9); checkAnswer(23, 'A')">A. 不如</button>
             <button data-answer="B" onclick="selectOption(this, 'B', 9); checkAnswer(23, 'B')">B. 到某種地步</button>
             <button data-answer="C" onclick="selectOption(this, 'C', 9); checkAnswer(23, 'C')">C. 以至於</button>
-            <button data-answer="D" onclick="selectOption(this, 'D', 9); checkAnswer(23, 'D')">D. 越…越…</button>
         </div>
     </li>
 
@@ -835,6 +872,21 @@
             <button data-answer="D" onclick="selectOption(this, 'D', 10); checkAnswer(24, 'D')">D. 表示原因</button>
         </div>
     </li>
+    <li>請選出正確的日文翻譯：
+        <div>這本書比那本書更有趣。</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 11); checkAnswer(25, 'A')">A. この本はあの本より面白いです。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 11); checkAnswer(25, 'B')">B. この本はあの本ほど面白いです。</button>
+            <button data-answer="C" onclick="selectOption(this, 'C', 11); checkAnswer(25, 'C')">C. この本はあの本くらい面白いです。</button>
+        </div>
+    </li>
+    <li>請選出正確的日文翻譯：
+        <div>與其去拜訪那傢伙，還不如待在家。</div>
+        <div class="answers">
+            <button data-answer="A" onclick="selectOption(this, 'A', 12); checkAnswer(26, 'A')">A. あの奴を訪問するほど、家にいたほうがいい。</button>
+            <button data-answer="B" onclick="selectOption(this, 'B', 12); checkAnswer(26, 'B')">B. あの奴を訪問するより、家にいたほうがいい。</button>
+        </div>
+    </li>
 
 </ol>
 <button onclick="showResult(this)">查看結果</button>
@@ -842,7 +894,7 @@
 
 <script>
     let score = 0;
-    let answers = ['B', 'C', 'A', 'A', 'B', 'D', 'B', 'B', 'A', 'B', 'C', 'D', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'D', 'C'];  // 正確答案的索引從 0 開始
+    let answers = ['B', 'C', 'A', 'A', 'B', 'D', 'B', 'B', 'A', 'B', 'C', 'D', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'A', 'C', 'A', 'B'];  // 正確答案的索引從 0 開始
 
     function selectOption(button, answer, index) {
         // 禁用所有按鈕
@@ -864,7 +916,7 @@
 
 
     function showResult() {
-        let totalQuestions = 25;
+        let totalQuestions = 27;
         let percentage = (score / totalQuestions) * 100;
         let resultText = `你答對了 ${score} 題，共 ${totalQuestions} 題，正確率為 ${percentage.toFixed(2)}%。`;
 

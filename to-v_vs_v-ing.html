@@ -125,38 +125,31 @@
         }
 
         nav {
-
             position: sticky;
-
             top: 0;
-
             z-index: 10;
-
             background: rgba(255,255,255,0.96);
-
             backdrop-filter: blur(10px);
-
             border-bottom: 1px solid var(--border);
-
             overflow-x: auto;
-
         }
 
+        /* 「目錄導覽」置中 */
+        .nav-title {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* 下面的目錄連結 */
         nav .nav-inner {
-
             max-width: 1050px;
-
             margin: auto;
-
             padding: 10px 20px;
-
             display: flex;
-
             gap: 8px;
-
             white-space: nowrap;
-
         }
+
 
         nav a {
 
@@ -836,10 +829,9 @@
     </p>
 
 </header>
+
 <nav>
-    <h3 style="text-align: center">目錄導覽</h3>
-</nav>
-<nav>
+    <h3 class="nav-title">目錄導覽</h3>
     <div class="nav-inner">
 
         <a href="#overview">總觀</a>

@@ -3187,6 +3187,19 @@
     <span> | </span>
     <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
 </div>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer>
 
     英文句型 × 日文文法學習筆記｜remember・forget・regret・happen・be used to<br>

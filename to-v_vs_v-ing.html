@@ -143,18 +143,29 @@
             margin: 10px 0;
         }
 
+        .nav-hint {
+            margin-left: 6px;
+            font-size: 12px;
+            font-weight: normal;
+            color: #999;
+        }
+
+
         /* 只有這一層可以左右滑動 */
         .nav-scroll {
             overflow-x: auto;
             overflow-y: hidden;
 
             /* 隱藏 scrollbar，可依需求拿掉 */
+            /*
             scrollbar-width: none;
+            */
         }
-
+        /*
         .nav-scroll::-webkit-scrollbar {
             display: none;
         }
+         */
 
         /* 主題連結 */
         .nav-inner {
@@ -858,7 +869,7 @@
 </header>
 
 <nav>
-    <h3 class="nav-title">目錄導覽</h3>
+    <h3 class="nav-title">目錄導覽<span class="nav-hint">｜因應不同螢幕尺寸，手機版目錄可左右滑動</span></h3>
 
     <div class="nav-scroll">
         <div class="nav-inner">

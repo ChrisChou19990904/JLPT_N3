@@ -128,27 +128,54 @@
             position: sticky;
             top: 0;
             z-index: 10;
-            background: rgba(255,255,255,0.96);
+
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
-            overflow-x: auto;
+
+            /* 不要讓整個 nav 水平滾動 */
+            overflow: hidden;
         }
 
-        /* 「目錄導覽」置中 */
+        /* 目錄導覽 */
         .nav-title {
             text-align: center;
             margin: 10px 0;
         }
 
-        /* 下面的目錄連結 */
-        nav .nav-inner {
+        /* 只有這一層可以左右滑動 */
+        .nav-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            /* 隱藏 scrollbar，可依需求拿掉 */
+            scrollbar-width: none;
+        }
+
+        .nav-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* 主題連結 */
+        .nav-inner {
             max-width: 1050px;
             margin: auto;
             padding: 10px 20px;
+
             display: flex;
             gap: 8px;
+
             white-space: nowrap;
+
+            /* 防止內容被壓縮 */
+            width: max-content;
+            min-width: 100%;
         }
+
+        .nav-inner a {
+            flex-shrink: 0;
+        }
+
 
 
         nav a {
@@ -832,41 +859,28 @@
 
 <nav>
     <h3 class="nav-title">目錄導覽</h3>
-    <div class="nav-inner">
 
-        <a href="#overview">總觀</a>
-
-        <a href="#remember-forget">Remember / Forget</a>
-
-        <a href="#regret">Regret</a>
-
-        <a href="#happen">Happen</a>
-
-        <a href="#past">「做過」</a>
-
-        <a href="#renyou">連用形</a>
-
-        <a href="#wasureru">〜忘れる</a>
-
-        <a href="#nareru">〜慣れる</a>
-
-        <a href="#used-to">be used to</a>
-
-        <a href="#compound">複合動詞</a>
-
-        <a href="#te_form">連用形 ≠ て形</a>
-
-        <a href="#twelve">連用形 ≠ V-ing</a>
-
-        <a href="#english_vs_japanese">英文句型 × 日文句型總表</a>
-
-        <a href="#combination">最重要的幾組對照</a>
-
-        <a href="#summary">總整理</a>
-
+    <div class="nav-scroll">
+        <div class="nav-inner">
+            <a href="#overview">總觀</a>
+            <a href="#remember-forget">Remember / Forget</a>
+            <a href="#regret">Regret</a>
+            <a href="#happen">Happen</a>
+            <a href="#past">「做過」</a>
+            <a href="#renyou">連用形</a>
+            <a href="#wasureru">〜忘れる</a>
+            <a href="#nareru">〜慣れる</a>
+            <a href="#used-to">be used to</a>
+            <a href="#compound">複合動詞</a>
+            <a href="#te_form">連用形 ≠ て形</a>
+            <a href="#twelve">連用形 ≠ V-ing</a>
+            <a href="#english_vs_japanese">英文句型 × 日文句型總表</a>
+            <a href="#combination">最重要的幾組對照</a>
+            <a href="#summary">總整理</a>
+        </div>
     </div>
-
 </nav>
+
 
 <main>
 

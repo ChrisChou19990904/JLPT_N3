@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>透過準備證照考試與學習新曲子的經驗談論如何克服過目即忘</title>
+    <!-- 引入 Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
@@ -27,8 +29,8 @@
         section {
             margin-bottom: 2rem;
         }
-        /* 圖片與生動圖說的樣式容器 */
-        .image-container {
+        /* 圖片與圖表容器樣式 */
+        .image-container, .chart-container {
             text-align: center;
             margin: 1.5rem 0;
         }
@@ -37,11 +39,18 @@
             max-width: 100%;
             height: auto;
         }
-        .image-caption {
+        .image-caption, .chart-caption {
             font-size: 0.95rem;
             color: #555;
             margin-top: 0.6rem;
             font-weight: bold;
+        }
+        .chart-container {
+            background: #fdfdfd;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         #social-share a {
             text-decoration: none;
@@ -206,6 +215,13 @@
 <section id="lack_of_understanding_gives_rise_to_oblivion">
     <h2>過目即忘，是因為理解還沒到位</h2>
     <p>大腦在接收新資訊時，不會馬上把所有訊息都存入長期記憶。只有當我們對該資訊產生理解、建立起相關聯結，重複練習並在不同情境下應用時，資訊才會穩固地留在腦中。</p>
+
+    <!-- Chart.js 遺忘曲線互動圖表 -->
+    <div class="chart-container">
+        <canvas id="forgettingCurveChart" width="400" height="200"></canvas>
+        <div class="chart-caption">圖：艾賓浩斯遺忘曲線對比——死記硬背（迅速遺忘） vs 透過理解與複習（穩固記憶）</div>
+    </div>
+
     <p>舉例來說，當大部分的人第一次看到日文動詞變化表：</p>
     <pre>
 する、しない、します、しません、した、しなかった、しました、しませんでした、させる、させない、させた、させなかった、して、しろ、せよ、しないで、してしまう、してしまった、していい、してもいい、しなくてもいい、しないでもいい、しなくてはいけない、しなくちゃいけない、してはいけない、しちゃいけない、してはならない、しなければならない、しなきゃ、しなきゃいけない、したい、したかった、したくない、したくなかった、させたい、させたくない、させたかった、させたくなかった、される、された、されない、されなかった、させられる、させられた、させられない、させられなかった、されたい、されたくない、されたかった、されたくなかった、させられたい、させられたかった、させられたくなかった
@@ -249,7 +265,7 @@
 
 <section id="process_of_learning_fifty_eight_melodies">
     <h2>記憶六十三首曲子的過程</h2>
-    <p>我腦中能記住六十三首曲子，也不是看一遍樂譜後就完全記住，而是先熟悉主旋律，再去背誦和弦的同時，邊背誦邊練習。久而久之，旋律內化成為長期記憶，更結合了手指的肌肉記憶。這樣的過程不只是純粹的記憶，而是理解、反覆操作與身體記憶的結合。</p>
+    <p>我腦中能記住六十三首曲子，也不是看一遍樂譜後就完全記住，而是先熟悉主旋律，再去背誦和弦的同時，邊背誦邊練習。久而久之，旋律內化成為長期記憶，更結合了手指的肌肉記憶.這樣的過程不只是純粹的記憶，而是理解、反覆操作與身體記憶的結合。</p>
     <p>這和語言學習或程式設計的過程類似：理解加練習，才能讓資訊成為真正屬於自己的知識。</p>
     <em>詳情請點入我的另一個GitHub Pages專案：</em>
     <p><a href="https://chrischou19990904.github.io/Marimba_App_Introduction/quantity_of_my_songs.html" target="_blank">Marimba App Introduction</a></p>
@@ -383,6 +399,69 @@
         "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
     document.getElementById("twitter-share").href =
         "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
+
+<!-- Chart.js 圖表渲染邏輯 -->
+<script>
+    const ctx = document.getElementById('forgettingCurveChart').getContext('2d');
+    const forgettingCurveChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['0天 (學習當下)', '1天後', '2天後', '4天後', '7天後', '14天後', '30天後'],
+            datasets: [
+                {
+                    label: '死記硬背（未複習／無深刻理解）',
+                    data: [100, 33, 25, 22, 21, 20, 19],
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: false
+                },
+                {
+                    label: '透過理解與反覆複習（長期記憶）',
+                    data: [100, 90, 95, 92, 96, 95, 98],
+                    borderColor: '#2980b9',
+                    backgroundColor: 'rgba(41, 128, 185, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '艾賓浩斯遺忘曲線與理解複習的對比',
+                    font: {
+                        size: 16
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    title: {
+                        display: true,
+                        text: '記憶保留率 (%)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: '時間進程'
+                    }
+                }
+            }
+        }
+    });
 </script>
 </body>
 </html>
